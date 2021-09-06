@@ -1,4 +1,4 @@
-baseURL: http://example.org/
+baseURL: https://junnayanaiportfolio.netlify.app
 languageCode: en-us
 title: Junna's Portfolio Website
 theme: forty
@@ -81,7 +81,7 @@ params:
   tiles:
     enable: yes
     showcase:
-      - image: pic01.jpg
+      - image: pic07.jpg
         subtitle: Masters in Analytics and Management Student at London Business School with international experience from the United States, France, and Japan, passionate about digitization and analytics. 
         title: Biography
         url: blogs/Biography
