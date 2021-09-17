@@ -5,7 +5,7 @@ categories:
 date: "2017-10-31T22:26:09-05:00"
 description: In this project, my team and I utilized tidyverse and ggplot packages to visualize data on topics ranging from temperatures and climate change to social media usage via the GSS.
 draft: false
-image: pic09.jpg
+image: picSKY.jpg
 keywords: ""
 slug: Project2
 title: Ggplot Project 2
