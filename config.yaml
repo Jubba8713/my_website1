@@ -97,10 +97,10 @@ params:
         subtitle: In this project, my team and I utilized tidyverse and ggplot packages to visualize data on topics ranging from temperatures and climate change to social media usage via the GSS.
         title: Ggplot Project 2
         url: blogs/Project2
-      - image: pic05.jpg
-        subtitle: Ipsum Dolor Sit Amet
-        title: Consequat
-        url: blogs/ipsum
+      - image: picAbstract.jpg
+        subtitle: During my undergraduate, I published a thesis on The Effect of CEO Profile and Company Statistics on Envrionmental and Social Disclosures in the Japanese Industrials Sector.
+        title: Past Research Paper
+        url: blogs/ResearchPaper
       - image: pic06.jpg
         subtitle: Feugiat Amet Tempus
         title: Etiam
