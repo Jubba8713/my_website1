@@ -1,14 +1,16 @@
 ---
-title: 'MAM 2022 Pre-programme Assignment'
-author: "Junna Yanai"
-date: "August 26, 2021"
-output: 
-html_document: 
-theme: darkly
-highlight: kate 
-toc: yes 
-toc_float: yes
+categories:
+- ""
+- ""
+date: "2017-10-31T21:28:43-05:00"
+description: ""
+draft: false
+image: picJunna.jpg
+keywords: ""
+slug: AboutMe
+title: About Me
 ---
+
 
 ```{r load-libraries, warning=FALSE, message=FALSE, echo=FALSE}
 library(tidyverse)  # Load ggplot2, dplyr, and all the other tidyverse packages
