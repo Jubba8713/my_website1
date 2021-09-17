@@ -84,7 +84,7 @@ params:
       - image: pic07.jpg
         subtitle: Masters in Analytics and Management Student at London Business School with international experience from the United States, France, and Japan, passionate about digitization and analytics. 
         title: About Me
-        url: AboutMe
+        url: blogs/AboutMe
       - image: pic02.jpg
         subtitle: Feugiat Amet Tempus
         title: Tempus
