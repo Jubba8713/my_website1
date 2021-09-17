@@ -13,4 +13,4 @@ title: Past Research Paper
 
 During my undergraduate years, I was a part of the Fintech and People Analytics seminar where I specialized in data science applied to human resources and finance. As a culmination of my studies at the seminar, I worked with my professor to analyze trends in ESG decision making in Japan and how it is affected by leadership and company statistics. 
 
-The full research paper can be accessed from [here] (https://drive.google.com/file/d/1QBOKlYwUzCnqdl9z5xtaRzJrOjYSe-nZ/view?usp=sharing)
+The full research paper can be accessed from here:  https://drive.google.com/file/d/1QBOKlYwUzCnqdl9z5xtaRzJrOjYSe-nZ/view?usp=sharing

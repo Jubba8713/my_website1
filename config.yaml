@@ -71,10 +71,14 @@ params:
         url: '#'
       - name: About Me
         url: blogs/AboutMe
-      - name: Project 1
+      - name: GGplot Project 1
         url: blogs/Project1
-      #- name: Elements
-        #url: elements.html
+      - name: GGplot Project 2
+        url: blogs/Project2
+      - name: Past Research Paper
+        url: blogs/ResearchPaper
+      - name: Bloomberg Project
+        url: blogs/Bloomberg
     menu: Menu
     subtitle: Portfolio Website
     title: Junna Yanai
@@ -101,10 +105,10 @@ params:
         subtitle: During my undergraduate, I published a thesis on The Effect of CEO Profile and Company Statistics on Envrionmental and Social Disclosures in the Japanese Industrials Sector.
         title: Past Research Paper
         url: blogs/ResearchPaper
-      - image: pic06.jpg
+      - image: ARIMA.jpg
         subtitle: Feugiat Amet Tempus
-        title: Etiam
-        url: blogs/ipsum
+        title: Bloomberg Project
+        url: blogs/Bloomberg
   #two:
     #buttonText: My Linkedin
     #enable: yes
