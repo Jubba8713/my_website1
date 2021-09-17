@@ -62,7 +62,7 @@ params:
   navigation:
     button1:
       - name: My Linkedin
-        url: https://www.linkedin.com/in/junnayanai/
+        url: 'https://www.linkedin.com/in/junnayanai/'
     button2: 
       - name: My CV
         url: 
@@ -70,9 +70,9 @@ params:
       - name: Home
         url: '#'
       - name: About Me
-        url: AboutMe
+        url: blogs/AboutMe
       - name: My Projects
-        url: MyProjects
+        url: blogs/MyProjects
       #- name: Elements
         #url: elements.html
     menu: Menu
@@ -89,10 +89,10 @@ params:
         subtitle: Feugiat Amet Tempus
         title: Tempus
         url: blogs/tempus
-      - image: pic03.jpg
-        subtitle: Lorem Etiam Nullam
-        title: Magna
-        url: blogs/magna
+      - image: pic07.jpg
+        subtitle: Masters in Analytics and Management Student at London Business School with international experience from the United States, France, and Japan, passionate about digitization and analytics. 
+        title: About Me
+        url: blogs/AboutMe
       - image: pic04.jpg
         subtitle: Nisl Sed Aliquam
         title: Ipsum
