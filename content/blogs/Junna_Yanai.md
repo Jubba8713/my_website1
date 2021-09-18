@@ -11,7 +11,6 @@ slug: AboutMe
 title: About Me
 ---
 
-
 ```{r load-libraries, warning=FALSE, message=FALSE, echo=FALSE}
 library(tidyverse)  # Load ggplot2, dplyr, and all the other tidyverse packages
 library(gapminder)  # gapminder dataset
@@ -34,7 +33,12 @@ My hobbies are:
 Please take a look at my Linkedin: 
 [Linkedin Link](www.linkedin.com/in/junnayanai)
 
-# Task 2: gapminder
+Please take a look at my CV: 
+[CV](https://drive.google.com/file/d/1dQQGpguJLZPYK1KqeRte1GBR4VLqi9E2/view)
+
+# Below are some of the basics analysis that I have done in my Master's program:
+
+#Gapminder Analysis
 
 ```{r}
 glimpse(gapminder)
@@ -44,6 +48,7 @@ head(gapminder, 20) # look at the first 20 rows of the dataframe
 ```
 
 ## Country data and continent data
+
 ```{r}
 country_data <- gapminder %>% 
             filter(country == "Japan")
@@ -53,6 +58,7 @@ continent_data <- gapminder %>%
 ```
 
 ## Country (Japan) life expectency 
+
 ```{r, lifeExp_one_country}
 plot1 <- ggplot(data = country_data, mapping = aes(x = year, y = lifeExp))+
    geom_point() +
@@ -61,7 +67,8 @@ plot1 <- ggplot(data = country_data, mapping = aes(x = year, y = lifeExp))+
 plot1
 ```
 
-##Entering the title and axes
+## Entering the title and axes
+
 ```{r, lifeExp_one_country_with_label}
  plot1<- plot1 +
    labs(title = "Japan Life Expectancy",
@@ -76,6 +83,7 @@ plot1
 In Japan, the life expectancy has grown significantly since the 1950s as it become an industrial developed nation. This is because Japan experienced high death rates and low living standards during wartime but now is one of the most medically advanced countries in the world. 
 
 ## Life expectancy in Asia
+
 ```{r lifeExp_one_continent}
  ggplot(continent_data, mapping = aes(x =year , y =lifeExp  , colour= country, group = country))+
    geom_point() + 
@@ -86,6 +94,7 @@ In Japan, the life expectancy has grown significantly since the 1950s as it beco
 We can see from this graph that the life expectancy is on an upward trend in every country in Asia. This is because the living standards and health of individuals in these countries are improving as the countries become more developed. 
 
 ## World life expectancy by continent
+
 ```{r lifeExp_facet_by_continent}
  ggplot(data = gapminder , mapping = aes(x = year , y = lifeExp , colour= continent))+
    geom_point() + 
@@ -97,7 +106,7 @@ We can see from this graph that the life expectancy is on an upward trend in eve
 
 Life expectancy is increasing in all parts of the world. Asian countries like Japan and Korea tend to have higher life expectancy compared to other countries throughout the years, and the average stands around 80 years old. The reason why these countries tend to have higher life expectencies is supposedly due to healthier diet and lack of patients from diseases like heart disease which are caused from obesity. People from western countries tend to suffer from such health problems, and people from poor countries lack access to healthcare.  
 
-# Task 3: Brexit vote analysis
+# Brexit vote analysis
 
 ## Brexit data
 ```{r load_brexit_data, warning=FALSE, message=FALSE}
@@ -150,7 +159,7 @@ ggplot(brexit_results, aes(x = born_in_uk, y = leave_share)) +
 
 The correlation between individuals born in the UK who have voted to leave the EU is high. Individuals who are born in the UK are UK citizens who have not immigrated to live in the country, hence their mentality towards the EU and the ease of currency exchange and immigration, as well as lack of flexibility for individual member countries for policy and public financing contributed to UK born citizens voting to leave the UK at higher rates that other groups. 
 
-# Task 4: Animal rescue incidents attended by the London Fire Brigade
+# Animal rescue incidents attended by the London Fire Brigade
 
 ## Data on animal rescue
 ```{r load_animal_rescue_data, warning=FALSE, message=FALSE}
@@ -180,7 +189,8 @@ animal_rescue %>%
 There is no evident trend for the number of animal incident count, as seen above. 
 
 
-##Animal Group Percentages
+## Animal Group Percentages
+
 ```{r, animal_group_percentages}
 animal_rescue %>% 
   group_by(animal_group_parent) %>% 
@@ -209,7 +219,8 @@ animal_rescue %>%
 
 As we can see from the percentages above, cats are almost half of the animal incidents that happen in absolute numbers. This is most likely because they are freely roaming around neighborhoods where humans live. They are vulnerable to cars running them over. 
 
-##Animal Rescue dataframe 
+## Animal Rescue dataframe 
+
 ```{r, parse_incident_cost,message=FALSE, warning=FALSE}
 
 # what type is variable incident_notional_cost from dataframe `animal_rescue`
@@ -227,6 +238,7 @@ typeof(animal_rescue$incident_notional_cost)
 ```
 
 ## Summary statistics
+
 ```{r, stats_on_incident_cost,message=FALSE, warning=FALSE}
 
 animal_rescue %>% 

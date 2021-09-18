@@ -13,6 +13,8 @@ categories:
 - ''
 ---
 
+Utilizing packages like lubridate and tidyverse to manipulate the data as well as ggplot to visualize, I have worked in teams to create the following codes. 
+
 ```{r, setup, include=FALSE}
 knitr::opts_chunk$set(
   message = FALSE, 
@@ -110,7 +112,7 @@ tidyweather %>%
   NULL
 ```
 
-> Answer below
+> INFERENCE
 
 Although all of the graphs in the grid have a similar upwards trend, there are subtle differences in variability between months such as December/January and June/July. January is a month with much higher variability in weather while June does not. This is something that may be worth looking into for meteorologists.
 
@@ -203,7 +205,7 @@ boot_ci <- comparison %>%
 boot_ci
 ```
 
-> Answer below
+> INFERENCE
 
 We construct a 95% confidence interval both using the formula and a bootstrap simulation. The result shows that the true mean lies within the interval calculated with 95% confidence. The fact that this confidence interval does not contain zero shows that the difference between the means is statistically significant. Hence, using our result, we can conclude that the increase in temprature is statistically significant and that global warming is progressing. 
 
@@ -307,7 +309,7 @@ gss_edu %>%
 
 #### Do these two Confidence Intervals overlap?
 
-> Answer below
+> INFERENCE
 
 Yes, they over lap from 0.355 to 0.384. 
 
@@ -348,7 +350,7 @@ gss %>%
   )
 ```
 
-> Answer below
+> INFERENCE
 
 The median is better representative of our dataset as data is heavily skewed as can be seen in standard deviation.
 
@@ -369,11 +371,11 @@ email_boot_ci <- gss %>%
 email_boot_ci
 ```
 
-> Answer below
+> INFERENCE
 
 From our perspective as students and hopeful white collar workers, the expected distribution would have been more uniform or normally distributed. However, as we can see from the graph, it is heavily skewed to the right. The fact that there are many people who spend little to no time on emails throughout the week which causes there to be skewness to the right proves that there are people with occupations and or lifestyles where checking emails is not a routine. This includes blue collar workers and the elderly population.
 
-> Answer below
+> INFERENCE
 
 We would expect the 99% confidence interval to be wider because our confidence level that the mean is within that interval is higher than 95%. Logically, there is a higher chance of the mean landing in a wider interval than its narrower counterpart.
 
@@ -441,7 +443,7 @@ knitr::include_graphics("biden_plot.png", error=F)
 
 ## Compare Confidence Intervals
 
-> Answer below
+> INFERENCE
 
 The confidence interval for 'week 4' ranges from 9.14 to 19.6828 with a mean of 14.41 and standard deviation of 10.25, while 'week 25' ranges from 10.30 to 12.7523 with a mean of 11.53 and a standard deviation of 4.74. This is mainly due to the number of data points. For 'week 4' we only have 17 data points to work with, while 'week 25' has 60. With a larger set of data to work with, we are able to create narrower intervals with the same level of confidence. 
 
@@ -492,7 +494,7 @@ data_join
 ```
 ### The reasoning behind our join operation choices
 
-> Answer below
+> INFERENCE
 
 The inner_join operation joins two data sets by matching common identifiers between the data sets and eliminating all data points that do not match. On the other hand, full_join also matches common identifiers but maintains all data points that do not exist in the smaller data set. The reason why we used inner_join to join hiv_long and life_expectancy is because we need the data on hiv to match that of life expectancy to create the graph on HIV prevalence and life expectancy as shown below. We needed to use full_join instead of inner_join to include the world bank data, however, because we must look at the relationship between fertility rate and GDP per capita in the later questions and both columns belong to the world bank data. Since we dont want to reduce the data available in the world bank data to that of HIV and life expectancy, which have less countries and smaller time frame, we must use full_join. 
 
@@ -514,7 +516,7 @@ data_join %>%
   NULL
 ```
 
-> Answer below
+> INFERENCE
 
 Although, the plots may look confusing, we can argue that the data is concentrated towards to top left corner which means times with less HIV prevalence have higher life expectancy overall. We are able to see this trend strongly for regions such as Latin America & the Caribbeans and Middle East and Africa. However, in developed regions the trends are not as obvious and there is large variability in all regions due to confounding variables such as other means by which people die early, such as car crashes and other diseases. 
 
@@ -531,7 +533,7 @@ data_join %>%
   NULL
 ```
 
-> Answer below
+> INFERENCE
 
 We see a negative correlation between fertility rate and GDP per capita overall, meaning lower fertility signifies higher GDP per capita. This relationship is strong in regions such as East Asia, which makes sense because East Asia has a mix of development levels and high variation in fertility rate (ex: Japan has low fertility rate and high GDP per capita while the Philippines has higher fertility rate and lower GDP per capita). On the other hand, the pattern is less pronounced in regions such as Middle East and Africa where most countries have high fertility and low GDP per capita. 
 
@@ -600,7 +602,7 @@ worldbank_data_pretty_much_long %>%
   NULL
 ```
 
-> Answer below
+> INFERENCE
 
 There is a strong positive relationship between school non-attendance and fertility rate for South Asia and Latin America and the Caribbeans. This is not the case for developed regions such as Europe where most countries have lower fertility and higher school attendance rates. 
 
@@ -634,7 +636,7 @@ bike <- bike0 %>%
 knitr::include_graphics("../images/tfl_distributions_monthly.png", error=F)
 ```
 
-> Answer below
+> INFERENCE
 
 The grid above shows a large decrease in bike rentals in May and June 2020 compared to previous years. This huge decrease is clearly to do with COVID-19 lockdowns since people had to stay inside. We can also see that May and June have some variability year to year which most likely has to do with weather conditions in those two months (i.e. if it's warmer in May 2018 than in May 2017, there would be more bike rentals in 2018).
 
@@ -731,13 +733,3 @@ As usual, there is a lot of explanatory text, comments, etc. You do not need the
 - What, if anything, gave you the most trouble: The details in replicating graphs
 
 **Please seek out help when you need it,** and remember the [15-minute rule](https://mam202.netlify.app/syllabus/#the-15-minute-rule){target=_blank}. You know enough R (and have enough examples of code from class and your readings) to be able to do this. If you get stuck, ask for help from others, post a question on Slack-- and remember that I am here to help too!  
-
-> As a true test to yourself, do you understand the code you submitted and are you able to explain it to someone else? 
-
-# Rubric
-
-Check minus (1/5): Displays minimal effort. Doesn't complete all components. Code is poorly written and not documented. Uses the same type of plot for each graph, or doesn't use plots appropriate for the variables being analyzed. 
-
-Check (3/5): Solid effort. Hits all the elements. No clear mistakes. Easy to follow (both the code and the output). 
-
-Check plus (5/5): Finished all components of the assignment correctly and addressed both challenges. Code is well-documented (both self-documented and with additional comments as necessary). Used tidyverse, instead of base R. Graphs and tables are properly labelled. Analysis is clear and easy to follow, either because graphs are labeled clearly or you've written additional text to describe how you interpret the output.

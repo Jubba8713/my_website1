@@ -15,6 +15,8 @@ editor_options:
     wrap: 72
 ---
 
+Utilizing packages like lubridate and tidyverse to manipulate the data as well as ggplot to visualize, I have worked in teams to create the following codes. 
+
 ```{r, setup, echo=FALSE}
 knitr::opts_chunk$set(
   message = FALSE, 
@@ -51,27 +53,19 @@ Back in 2014,
 [fivethiryeight.com](https://fivethirtyeight.com/features/dear-mona-followup-where-do-people-drink-the-most-beer-wine-and-spirits/)
 published an article on alchohol consumption in different countries. The
 data `drinks` is available as part of the `fivethirtyeight` package.
-Make sure you have installed the `fivethirtyeight` package before
-proceeding.
 
 ```{r, load_alcohol_data}
 library(fivethirtyeight)
 data(drinks)
 ```
 
-What are the variable types? Any missing values we should worry about?
-
-There is 1 character variable and 4 numeric variables. No missing values
-to worry about.
+## Exploring the data with the skim command
 
 ```{r glimpse_skim_data}
 drinks %>% skim #Skim the data for variable types and missing values.
 ```
 
-There is 1 character variable and 4 numeric variables. No missing values
-to worry about.
-
-Make a plot that shows the top 25 beer consuming countries
+### Finding the top 25 beer consuming countries 
 
 ```{r beer_plot}
 #Create a plot to show the top 25 beer consuming countries
@@ -84,7 +78,7 @@ drinks %>%
   NULL
 ```
 
-Make a plot that shows the top 25 wine consuming countries
+### Finding the top 25 wine consuming countries 
 
 ```{r wine_plot}
 #Create a plot to show the top 25 wine consuming countries
@@ -97,7 +91,7 @@ drinks %>%
   NULL
 ```
 
-Finally, make a plot that shows the top 25 spirit consuming countries
+### Finding the top 25 spirit consuming countries 
 
 ```{r spirit_plot}
 #Create a plot to show the top 25 spirit consuming countries
@@ -110,10 +104,7 @@ drinks %>%
   NULL
 ```
 
-What can you infer from these plots? Don't just explain what's in the
-graph, but speculate or tell a short story (1-2 paragraphs max).
-
-> TYPE YOUR ANSWER AFTER (AND OUTSIDE!) THIS BLOCKQUOTE.
+> INFERENCE
 
 Rudimental factors that affect consumption of beer, wine, and spirit
 include production levels, drinking age limit, pricing, and culture.
@@ -161,18 +152,14 @@ and `duration`, the rest of the variables are as follows:
 -   `reviews`: the number of reviews for that movie
 -   `rating`: IMDB average rating
 
-## Use your data import, inspection, and cleaning skills to answer the following:
-
--   Are there any missing values (NAs)? Are all entries distinct or are
-    there duplicate entries?
+### Checking for missing values
 
 ```{r}
 paste('Missing values:', sum(is.na(movies))) #Check missing values
 paste('Duplicate values:', sum(duplicated(movies))) #Check duplicated values
 ```
 
--   Produce a table with the count of movies by genre, ranked in
-    descending order
+### A table with the count of movies by genre, ranked in descending order
 
 ```{r}
 movies %>%
@@ -198,10 +185,7 @@ movies %>%
   arrange(-return_on_budget) #Ranked genres by return on budget in descending order
 ```
 
--   Produce a table that shows the top 15 directors who have created the
-    highest gross revenue in the box office. Don't just show the total
-    gross amount, but also the mean, median, and standard deviation per
-    director.
+### Top 15 producers with the highest gross revenue
 
 ```{r}
 #Produce a table that shows the top 15 directors who have created the highest gross revenue in the box office
@@ -215,10 +199,7 @@ movies %>%
   slice_max(order_by=total, n=15) #Select the top 15 highest gross revenue data, order by total 
 ```
 
--   Finally, ratings. Produce a table that describes how ratings are
-    distributed by genre. We don't want just the mean, but also, min,
-    max, median, SD and some kind of a histogram or density graph that
-    visually shows how ratings are distributed.
+### Rating distribution per genre
 
 ```{r}
 #Calculate median,min,max,and sd of ratings
@@ -242,13 +223,7 @@ movies %>%
   NULL
 ```
 
-## Use `ggplot` to answer the following
-
--   Examine the relationship between `gross` and `cast_facebook_likes`.
-    Produce a scatterplot and write one sentence discussing whether the
-    number of facebook likes that the cast has received is likely to be
-    a good predictor of how much money a movie will make at the box
-    office. What variable are you going to map to the Y- and X- axes?
+## Scatterplot for `gross` and `cast_facebook_likes`
 
 ```{r, gross_on_fblikes}
 #Create scatterplot to examine the relationship between gross and cast_facebook_likes
@@ -264,7 +239,7 @@ movies %>%
   NULL
 ```
 
-> TYPE YOUR ANSWER AFTER (AND OUTSIDE!) THIS BLOCKQUOTE.
+> INFERENCE
 
 The x-axis depicts the Facebook likes and the y-axis gross profits.
 While the data show a slight positive correlation between Facebook Likes
@@ -273,10 +248,7 @@ seem to be a strong predictor of the money a movie makes. Mapping other
 variables could help determine what truly impacts the money a movie
 makes.
 
--   Examine the relationship between `gross` and `budget`. Produce a
-    scatterplot and write one sentence discussing whether budget is
-    likely to be a good predictor of how much money a movie will make at
-    the box office.
+### Scatterplot between `gross` and `budget`. 
 
 ```{r, gross_on_budget}
 #Create scatterplot to examine the relationship between gross and budget
@@ -290,16 +262,13 @@ movies %>%
   NULL
 ```
 
-> TYPE YOUR ANSWER AFTER (AND OUTSIDE!) THIS BLOCKQUOTE.
+> INFERENCE
 
 Compared to the previous plot, this plot shows a higher correlation
 between budget and gross profit; however, there is still much
 variability and we cannot conclude that the relationship is significant.
 
--   Examine the relationship between `gross` and `rating`. Produce a
-    scatterplot, faceted by `genre` and discuss whether IMDB ratings are
-    likely to be a good predictor of how much money a movie will make at
-    the box office. Is there anything strange in this dataset?
+### Scatterplot between `gross` and `rating`. 
 
 ```{r, gross_on_rating}
 #Create scatterplot to examine the relationship between gross and ratings, faceted by genre
@@ -311,6 +280,7 @@ movies %>%
   labs(title='Relationship Between Gross Profit and Rating', subtitle= 'By Genre', x='Rating', y='Gross Profit') + 
   NULL
 ```
+> INFERENCE
 
 Our hypothesis before examining the data was that rating would be a good
 predictor of gross profit. While we see that is the case for Action,
@@ -333,9 +303,6 @@ movie like Star Wars would be assigned Action, rather than Sci-Fi.
 
 # Returns of financial stocks
 
-> You may find useful the material on [finance data
-> sources](https://mam2022.netlify.app/reference/finance_data/).
-
 We will use the `tidyquant` package to download historical data of stock
 prices, calculate returns, and examine the distribution of returns.
 
@@ -351,8 +318,7 @@ nyse <- read_csv(here::here("data","nyse.csv"))
 glimpse(nyse)
 ```
 
-Based on this dataset, create a table and a bar plot that shows the
-number of companies per sector, in descending order
+### A table and a bar plot that shows the number of companies per sector, in descending order
 
 ```{r companies_per_sector}
 #Create table for numbers of companies per sector in descending order
@@ -422,8 +388,7 @@ myStocks_returns_annual <- myStocks %>%
 
 ```
 
-Create a table where you summarise monthly returns for each of the
-stocks and `SPY`; min, max, median, mean, SD.
+### Table to summarise monthly returns for each of the stocks and `SPY`; min, max, median, mean, SD.
 
 ```{r summarise_monthly_returns}
 #Create a table that summarise min, max, median, mean, SD of monthly returns for each of the stock
@@ -452,10 +417,8 @@ myStocks_returns_monthly %>%
   NULL
 ```
 
-What can you infer from this plot? Which stock is the riskiest? The
+> What can you infer from this plot? Which stock is the riskiest? The
 least risky?
-
-> TYPE YOUR ANSWER AFTER (AND OUTSIDE!) THIS BLOCKQUOTE.
 
 Plotting the monthly returns for the stocks of various companies over
 time helps us determine the level of risk involved in such investments.
@@ -480,19 +443,15 @@ myStocks_returns_monthly %>%
   labs(title='Risk and Return Plot for Selected Stocks', x='Risk', y='Return') +
   NULL
 ```
-
-What can you infer from this plot? Are there any stocks which, while
+> What can you infer from this plot? Are there any stocks which, while
 being riskier, do not have a higher expected return?
-
-> TYPE YOUR ANSWER AFTER (AND OUTSIDE!) THIS BLOCKQUOTE.
 
 This plot depicts the risk-return relationship of each stock. While DPZ
 provides the highest return for a moderate risk level, ANF, despite
 being the riskiest, provides the least amount of return.
 
-# On your own: IBM HR Analytics
+# IBM HR Analytics
 
-For this task, you will analyse a data set on Human Resoruce Analytics.
 The [IBM HR Analytics Employee Attrition & Performance data
 set](https://www.kaggle.com/pavansubhasht/ibm-hr-analytics-attrition-dataset)
 is a fictional data set created by IBM data scientists. Among other
@@ -500,18 +459,14 @@ things, the data set includes employees' income, their distance from
 work, their position in the company, their level of education, etc. A
 full description can be found on the website.
 
-First let us load the data
+### Loading the data
 
 ```{r}
 #Load the data
 hr_dataset <- read_csv(here::here("data", "datasets_1067_1925_WA_Fn-UseC_-HR-Employee-Attrition.csv"))
 glimpse(hr_dataset)
 ```
-
-I am going to clean the data set, as variable names are in capital
-letters, some variables are not really necessary, and some variables,
-e.g., `education` are given as a number rather than a more useful
-description
+### Cleaning the dataset
 
 ```{r}
 #Clean the data set
@@ -555,10 +510,7 @@ hr_cleaned <- hr_dataset %>%
 hr_cleaned
 ```
 
-Produce a one-page summary describing this dataset. Here is a
-non-exhaustive list of questions:
-
-1.  How often do people leave the company (`attrition`)?
+### Observing attrition
 
 ```{r HR question1}
 hr_cleaned %>%
@@ -570,10 +522,7 @@ hr_cleaned %>%
   select(proportion)
 ```
 
-2.  How are `age`, `years_at_company`, `monthly_income` and
-    `years_since_last_promotion` distributed? Can you roughly guess
-    which of these variables is closer to Normal just by looking at
-    summary statistics?
+### Distribution of `age`, `years_at_company`, `monthly_income` and `years_since_last_promotion` 
 
 ```{r HR uestion2}
 hr_cleaned %>%
@@ -581,8 +530,7 @@ hr_cleaned %>%
   summary
 ```
 
-3.  How are `job_satisfaction` and `work_life_balance` distributed?
-    Don't just report counts, but express categories as % of total?
+### Distribution of `job_satisfaction` and `work_life_balance` distributed
 
 ```{r HR question3}
 #Calculate the total number of employees
@@ -605,8 +553,7 @@ hr_cleaned %>%
   select(proportion)
 ```
 
-4.  Is there any relationship between monthly income and education?
-    Monthly income and gender?
+### Boxplot between monthly income and education
 
 ```{r HR question4}
 #Create a box plot to examine the relationship between monthly income and education
@@ -626,8 +573,7 @@ hr_cleaned %>%
   NULL
 ```
 
-5.  Plot a boxplot of income vs job role. Make sure the highest-paid job
-    roles appear first.
+### Boxplot of income vs job role. 
 
 ```{r HR question5}
 #Create a box plot to examine the relationship between monthly income and job role
@@ -638,9 +584,8 @@ hr_cleaned %>%
   labs(title='Relationship Between Job Role and Monthly Income', x='Monthly Income', y='Job Role') +
   NULL
 ```
-
-6.  Calculate and plot a bar chart of the mean (or median?) income by
-    education level.
+    
+### Bar chart of the mean (or median?) income by education level.
 
 ```{r HR question6}
 #Create a bar chart of mean income by education level
@@ -654,8 +599,7 @@ hr_cleaned %>%
   NULL
 ```
 
-7.  Plot the distribution of income by education level. Use a facet_wrap
-    and a theme from `ggthemes`.
+### Density plot of monthly income by education level
 
 ```{r HR question7}
 #Create a density plot of monthly income by education level, faceted by education level
@@ -682,7 +626,7 @@ hr_cleaned %>%
   NULL
 ```
 
-> TYPE YOUR ANSWER AFTER (AND OUTSIDE!) THIS BLOCKQUOTE.
+> INFERENCE
 
 After analysis of the IBM HR Analytics Employee Attrition & Performance
 Data, we discovered interesting information that may be useful for
