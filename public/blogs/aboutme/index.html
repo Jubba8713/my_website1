@@ -1,0 +1,339 @@
+<!DOCTYPE HTML>
+<html>
+
+    <head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<meta name="description" content="Your description">
+	<meta name="author" content="Junna Yanai">
+	<meta name="generator" content="Hugo 0.87.0" />
+	<title>About Me &middot; Junna&#39;s Portfolio Website</title>
+	<!-- Stylesheets -->
+	
+	<link rel="stylesheet" href="https://junnayanaiportfolio.netlify.app/css/main.css"/>
+	
+	
+
+	
+
+	<!-- Custom Fonts -->
+	<link href="https://junnayanaiportfolio.netlify.app/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+	
+	<link rel="shortcut icon" type="image/x-icon" href="https://junnayanaiportfolio.netlify.app/favicon.ico">
+	<link rel="icon" type="image/x-icon" href="https://junnayanaiportfolio.netlify.app/favicon.ico">
+	
+
+	<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+	<!--[if lt IE 9]>
+	<script src="js/ie/html5shiv.js"></script>
+	<script src="js/ie/html5shiv.jsrespond.min.js"></script>
+	<![endif]-->
+</head>
+
+    <body>
+
+    <!-- Wrapper -->
+        <div id="wrapper">
+
+            <!-- Header -->
+    <header id="header" class="alt">
+        <a href="https://junnayanaiportfolio.netlify.app/" class="logo"><strong>Junna Yanai</strong> <span>Portfolio Website</span></a>
+        <nav>
+            <a href="#menu">Menu</a>
+        </nav>
+    </header>
+
+<!-- Menu -->
+    <nav id="menu">
+        <ul class="links">
+            
+                <li><a href="https://junnayanaiportfolio.netlify.app/">Home</a></li>
+            
+                <li><a href="https://junnayanaiportfolio.netlify.app/blogs/AboutMe">About Me</a></li>
+            
+                <li><a href="https://junnayanaiportfolio.netlify.app/blogs/Project1">GGplot Project 1</a></li>
+            
+                <li><a href="https://junnayanaiportfolio.netlify.app/blogs/Project2">GGplot Project 2</a></li>
+            
+                <li><a href="https://junnayanaiportfolio.netlify.app/blogs/ResearchPaper">Past Research Paper</a></li>
+            
+                <li><a href="https://junnayanaiportfolio.netlify.app/blogs/Bloomberg">Bloomberg Project</a></li>
+            
+
+        </ul>
+        <ul class="actions vertical">
+            
+                <li><a href="https://www.linkedin.com/in/junnayanai/" class="button special fit">My Linkedin</a></li>
+            
+            
+                <li><a href="https://drive.google.com/file/d/1dQQGpguJLZPYK1KqeRte1GBR4VLqi9E2/view?usp=sharing" class="button fit">My CV</a></li>
+            
+        </ul>
+    </nav>
+
+        <!-- Main -->
+            <div id="main" class="alt">
+
+                
+                    <section id="one">
+                        <div class="inner">
+                            <header class="major">
+                                <h1>About Me</h1>
+                            </header>
+                            
+                                <span class="image main"><img src="/img/blogs/picJunna.jpg" alt="" /></span>
+                            
+                            <pre><code class="language-{r" data-lang="{r">library(tidyverse)  # Load ggplot2, dplyr, and all the other tidyverse packages
+library(gapminder)  # gapminder dataset
+library(here)
+library(janitor)
+</code></pre><h1 id="junna-yanai-bibliography">Junna Yanai Bibliography</h1>
+<p>My name is Junna Yanai and I am from the <strong>San Francisco Bay Area</strong>. I was born in <strong>Japan</strong>, studied in the U.S.A. until high school, and graduated from dual degree between <em>Sciences Po Paris</em> and <em>Keio University</em> for a Bachelors in Economics. I am very excited to attend London Business School.</p>
+<p><img src="https://media-exp1.licdn.com/dms/image/C5603AQEwrZvNBegIkA/profile-displayphoto-shrink_400_400/0/1626730549606?e=1635379200&amp;v=beta&amp;t=bIjjy5KX2zowqMNBRWk57hmtavIH0b-NpfxZkBrAzMU" alt=""></p>
+<p>My hobbies are:</p>
+<ol>
+<li>running</li>
+<li>tennis</li>
+<li>baking</li>
+<li>taking photos of flowers and puppies</li>
+</ol>
+<p>Please take a look at my Linkedin:
+<a href="www.linkedin.com/in/junnayanai">Linkedin Link</a></p>
+<h1 id="here-are-some-of-the-basic-models-ive-made-in-my-course">Here are some of the basic models I&rsquo;ve made in my course:</h1>
+<h2 id="gapminder-analysis">Gapminder Analysis</h2>
+<pre><code class="language-{r}" data-lang="{r}">glimpse(gapminder)
+
+head(gapminder, 20) # look at the first 20 rows of the dataframe
+
+</code></pre><h3 id="country-data-and-continent-data">Country data and continent data</h3>
+<pre><code class="language-{r}" data-lang="{r}">country_data &lt;- gapminder %&gt;% 
+            filter(country == &quot;Japan&quot;)
+
+continent_data &lt;- gapminder %&gt;% 
+            filter(continent == &quot;Asia&quot;)
+</code></pre><h3 id="country-japan-life-expectency">Country (Japan) life expectency</h3>
+<pre><code class="language-{r," data-lang="{r,">plot1 &lt;- ggplot(data = country_data, mapping = aes(x = year, y = lifeExp))+
+   geom_point() +
+   geom_smooth(se = FALSE)+
+  NULL
+plot1
+</code></pre><h3 id="entering-the-title-and-axes">Entering the title and axes</h3>
+<pre><code class="language-{r," data-lang="{r,"> plot1&lt;- plot1 +
+   labs(title = &quot;Japan Life Expectancy&quot;,
+       x = &quot;Year&quot;,
+       y = &quot;Life Expectancy&quot;) +
+   NULL
+
+
+ plot1
+</code></pre><p>In Japan, the life expectancy has grown significantly since the 1950s as it become an industrial developed nation. This is because Japan experienced high death rates and low living standards during wartime but now is one of the most medically advanced countries in the world.</p>
+<h3 id="life-expectancy-in-asia">Life expectancy in Asia</h3>
+<pre><code class="language-{r" data-lang="{r"> ggplot(continent_data, mapping = aes(x =year , y =lifeExp  , colour= country, group = country))+
+   geom_point() + 
+   geom_smooth(se = FALSE) +
+   NULL
+</code></pre><p>We can see from this graph that the life expectancy is on an upward trend in every country in Asia. This is because the living standards and health of individuals in these countries are improving as the countries become more developed.</p>
+<h3 id="world-life-expectancy-by-continent">World life expectancy by continent</h3>
+<pre><code class="language-{r" data-lang="{r"> ggplot(data = gapminder , mapping = aes(x = year , y = lifeExp , colour= continent))+
+   geom_point() + 
+   geom_smooth(se = FALSE) +
+   facet_wrap(~continent) +
+   theme(legend.position=&quot;none&quot;) + #remove all legends
+   NULL
+</code></pre><p>Life expectancy is increasing in all parts of the world. Asian countries like Japan and Korea tend to have higher life expectancy compared to other countries throughout the years, and the average stands around 80 years old. The reason why these countries tend to have higher life expectencies is supposedly due to healthier diet and lack of patients from diseases like heart disease which are caused from obesity. People from western countries tend to suffer from such health problems, and people from poor countries lack access to healthcare.</p>
+<h2 id="brexit-vote-analysis">Brexit vote analysis</h2>
+<h3 id="brexit-data">Brexit data</h3>
+<pre><code class="language-{r" data-lang="{r">brexit_results &lt;- read_csv(here::here(&quot;data&quot;,&quot;brexit_results.csv&quot;))
+
+
+glimpse(brexit_results)
+</code></pre><h3 id="distribution-of-leave--in-all-constituencies">Distribution of leave % in all constituencies</h3>
+<pre><code class="language-{r" data-lang="{r">
+# histogram
+ggplot(brexit_results, aes(x = leave_share)) +
+  geom_histogram(binwidth = 2.5)
+
+# density plot-- think smoothed histogram
+ggplot(brexit_results, aes(x = leave_share)) +
+  geom_density()
+
+
+# The empirical cumulative distribution function (ECDF) 
+ggplot(brexit_results, aes(x = leave_share)) +
+  stat_ecdf(geom = &quot;step&quot;, pad = FALSE) +
+  scale_y_continuous(labels = scales::percent)
+  
+
+
+</code></pre><h3 id="correlation-between-leave-share-and-born-in-uk-status">Correlation between leave share and born in UK status</h3>
+<pre><code class="language-{r" data-lang="{r">brexit_results %&gt;% 
+  select(leave_share, born_in_uk) %&gt;% 
+  cor()
+</code></pre><h3 id="scatterplot-between-leaveshare-and-born-in-uk">Scatterplot between leaveshare and born in UK</h3>
+<pre><code class="language-{r" data-lang="{r">ggplot(brexit_results, aes(x = born_in_uk, y = leave_share)) +
+  geom_point(alpha=0.3) +
+  
+  # add a smoothing line, and use method=&quot;lm&quot; to get the best straight-line
+  geom_smooth(method = &quot;lm&quot;) + 
+  
+  # use a white background and frame the plot with a black box
+  theme_bw() +
+  NULL
+</code></pre><p>The correlation between individuals born in the UK who have voted to leave the EU is high. Individuals who are born in the UK are UK citizens who have not immigrated to live in the country, hence their mentality towards the EU and the ease of currency exchange and immigration, as well as lack of flexibility for individual member countries for policy and public financing contributed to UK born citizens voting to leave the UK at higher rates that other groups.</p>
+<h2 id="animal-rescue-incidents-attended-by-the-london-fire-brigade-analysis">Animal rescue incidents attended by the London Fire Brigade analysis</h2>
+<h3 id="data-on-animal-rescue">Data on animal rescue</h3>
+<pre><code class="language-{r" data-lang="{r">
+url &lt;- &quot;https://data.london.gov.uk/download/animal-rescue-incidents-attended-by-lfb/8a7d91c2-9aec-4bde-937a-3998f4717cd8/Animal%20Rescue%20incidents%20attended%20by%20LFB%20from%20Jan%202009.csv&quot;
+
+animal_rescue &lt;- read_csv(url,
+                          locale = locale(encoding = &quot;CP1252&quot;)) %&gt;% 
+  janitor::clean_names()
+
+
+glimpse(animal_rescue)
+</code></pre><h3 id="animal-rescue-count">Animal rescue count</h3>
+<pre><code class="language-{r," data-lang="{r,">
+animal_rescue %&gt;% 
+  dplyr::group_by(cal_year) %&gt;% 
+  summarise(count=n())
+
+animal_rescue %&gt;% 
+  count(cal_year, name=&quot;count&quot;)
+
+</code></pre><p>There is no evident trend for the number of animal incident count, as seen above.</p>
+<h3 id="animal-group-percentages">Animal Group Percentages</h3>
+<pre><code class="language-{r," data-lang="{r,">animal_rescue %&gt;% 
+  group_by(animal_group_parent) %&gt;% 
+  
+  #group_by and summarise will produce a new column with the count in each animal group
+  summarise(count = n()) %&gt;% 
+  
+  # mutate adds a new column; here we calculate the percentage
+  mutate(percent = round(100*count/sum(count),2)) %&gt;% 
+  
+  # arrange() sorts the data by percent. Since the default sorting is min to max and we would like to see it sorted
+  # in descending order (max to min), we use arrange(desc()) 
+  arrange(desc(percent))
+
+
+animal_rescue %&gt;% 
+  
+  #count does the same thing as group_by and summarise
+  # name = &quot;count&quot; will call the column with the counts &quot;count&quot; ( exciting, I know)
+  # and 'sort=TRUE' will sort them from max to min
+  count(animal_group_parent, name=&quot;count&quot;, sort=TRUE) %&gt;% 
+  mutate(percent = round(100*count/sum(count),2))
+
+
+</code></pre><p>As we can see from the percentages above, cats are almost half of the animal incidents that happen in absolute numbers. This is most likely because they are freely roaming around neighborhoods where humans live. They are vulnerable to cars running them over.</p>
+<h3 id="animal-rescue-dataframe">Animal Rescue dataframe</h3>
+<pre><code class="language-{r," data-lang="{r,">
+# what type is variable incident_notional_cost from dataframe `animal_rescue`
+typeof(animal_rescue$incident_notional_cost)
+
+# readr::parse_number() will convert any numerical values stored as characters into numbers
+animal_rescue &lt;- animal_rescue %&gt;% 
+
+  # we use mutate() to use the parse_number() function and overwrite the same variable
+  mutate(incident_notional_cost = parse_number(incident_notional_cost))
+
+# incident_notional_cost from dataframe `animal_rescue` is now 'double' or numeric
+typeof(animal_rescue$incident_notional_cost)
+
+</code></pre><h3 id="summary-statistics">Summary statistics</h3>
+<pre><code class="language-{r," data-lang="{r,">
+animal_rescue %&gt;% 
+  
+  # group by animal_group_parent
+  group_by(animal_group_parent) %&gt;% 
+  
+  # filter resulting data, so each group has at least 6 observations
+  filter(n()&gt;6) %&gt;% 
+  
+  # summarise() will collapse all values into 3 values: the mean, median, and count  
+  # we use na.rm=TRUE to make sure we remove any NAs, or cases where we do not have the incident cos
+  summarise(mean_incident_cost = mean (incident_notional_cost, na.rm=TRUE),
+            median_incident_cost = median (incident_notional_cost, na.rm=TRUE),
+            sd_incident_cost = sd (incident_notional_cost, na.rm=TRUE),
+            min_incident_cost = min (incident_notional_cost, na.rm=TRUE),
+            max_incident_cost = max (incident_notional_cost, na.rm=TRUE),
+            count = n()) %&gt;% 
+  
+  # sort the resulting data in descending order. You choose whether to sort by count or mean cost.
+  arrange(desc(mean_incident_cost))
+
+</code></pre><p>First, I notice that the standard deviation is bigger for animals with higher incident costs and also that the median cost is clearly smaller than the mean costs. From this we can interpret that larger animals like horses, cows, and deers can get into accidents that can cost the most, but the price varied widely. This is not a surprise. In terms of outliers, we see that they mainly involve higher prices rather than lower prices. For instance, the maximum price for horse incidents is 3480, which is over 3 standard deviations away from the mean. Same goes for deers.</p>
+<h3 id="plots-on-incident-cost-by-animals-group">Plots on incident cost by animals group</h3>
+<pre><code class="language-{r," data-lang="{r,">
+base_plot &lt;- animal_rescue %&gt;% 
+  group_by(animal_group_parent) %&gt;% 
+  filter(n()&gt;6) %&gt;% 
+  ggplot(aes(x=incident_notional_cost))+
+  facet_wrap(~animal_group_parent, scales = &quot;free&quot;)+
+  theme_bw()
+
+base_plot + geom_histogram()
+base_plot + geom_density()
+base_plot + geom_boxplot()
+base_plot + stat_ecdf(geom = &quot;step&quot;, pad = FALSE) +
+  scale_y_continuous(labels = scales::percent)
+
+
+
+</code></pre><p>The histogram and box and whisker plot are most useful when communicating this information because it it clearly shows the distribution and the outliers. The line graph is more fit to represent data on continuous x values such as time. Based on the distribution of the above graphs, we can see that smaller rodent animals such as rabbits and ferrets have an even distribution that are less skewed compared to other animals. Animals such as horses and cows tend to be skewed to the right, with clear outliers for heavier incidents. However, these animals are still more expensive, as can be observed from the median values. This is most likely because they can cause larger impact at the incident scene as compared to smaller animals.</p>
+
+                        </div>
+                    </section>
+            <!-- Disqus Inject -->
+                
+            </div>
+            
+        <!-- Footer -->
+            
+                <!-- Footer -->
+    <footer id="footer">
+        <div class="inner">
+            <ul class="icons">
+                
+                    <li><a href="https://www.facebook.com/junna.yanai.3/" class="icon alt fa-facebook" target="_blank"><span class="label">Facebook</span></a></li>
+                
+                    <li><a href="https://github.com/Jubba8713" class="icon alt fa-github" target="_blank"><span class="label">GitHub</span></a></li>
+                
+                    <li><a href="https://www.linkedin.com/in/junnayanai/" class="icon alt fa-linkedin" target="_blank"><span class="label">LinkedIn</span></a></li>
+                
+            </ul>
+            <ul class="copyright">
+                <li>&copy; Company Name</li>
+                
+                <li>Design:  <a href="https://www.html5up.net">HTML5 UP</a></li>
+                
+            </ul>
+        </div>
+    </footer>
+
+            
+        </div>
+
+    <!-- Scripts -->
+        <!-- Scripts -->
+    <!-- jQuery -->
+    <script src="https://junnayanaiportfolio.netlify.app/js/jquery.min.js"></script>
+    <script src="https://junnayanaiportfolio.netlify.app/js/jquery.scrolly.min.js"></script>
+    <script src="https://junnayanaiportfolio.netlify.app/js/jquery.scrollex.min.js"></script>
+    <script src="https://junnayanaiportfolio.netlify.app/js/skel.min.js"></script>
+    <script src="https://junnayanaiportfolio.netlify.app/js/util.js"></script>
+
+    
+
+    <!-- Main JS -->
+    <script src="https://junnayanaiportfolio.netlify.app/js/main.js"></script>
+
+    
+
+    
+
+    </body>
+</html>

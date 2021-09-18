@@ -1,14 +1,16 @@
 ---
-categories:
-- ""
-- ""
-date: "2017-10-31T22:26:09-05:00"
-description: In this project, my team and I utilized tidyverse and ggplot packages to visualize data on topics ranging from temperatures and climate change to social media usage via the GSS.
-draft: false
+title: "Ggplot Project 2"
+date: '2017-10-31T22:26:09-05:00'
+description: In this project, my team and I utilized tidyverse and ggplot packages
+  to visualize data on topics ranging from temperatures and climate change to social
+  media usage via the GSS.
+draft: no
 image: picSKY.jpg
-keywords: ""
-slug: Project2
-title: Ggplot Project 2
+keywords: ''
+slug: project2
+categories:
+- ''
+- ''
 ---
 
 ```{r, setup, include=FALSE}
@@ -39,6 +41,7 @@ library(readxl)
 library(vroom)
 library(countrycode)
 library(infer)
+library(knitr)
 
 set.seed(1) #making results replicable by setting seed
 ```

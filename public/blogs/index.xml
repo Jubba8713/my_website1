@@ -8,12 +8,13 @@
     <language>en-us</language>
     <lastBuildDate>Tue, 31 Oct 2017 22:27:21 -0500</lastBuildDate><atom:link href="https://junnayanaiportfolio.netlify.app/blogs/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Tempus</title>
-      <link>https://junnayanaiportfolio.netlify.app/blogs/tempus/</link>
+      <title>Past Research Paper</title>
+      <link>https://junnayanaiportfolio.netlify.app/blogs/researchpaper/</link>
       <pubDate>Tue, 31 Oct 2017 22:26:13 -0500</pubDate>
       
-      <guid>https://junnayanaiportfolio.netlify.app/blogs/tempus/</guid>
-      <description></description>
+      <guid>https://junnayanaiportfolio.netlify.app/blogs/researchpaper/</guid>
+      <description>During my undergraduate years, I was a part of the Fintech and People Analytics seminar where I specialized in data science applied to human resources and finance. As a culmination of my studies at the seminar, I worked with my professor to analyze trends in ESG decision making in Japan and how it is affected by leadership and company statistics.
+The full research paper can be accessed from here: https://drive.google.com/file/d/1QBOKlYwUzCnqdl9z5xtaRzJrOjYSe-nZ/view?usp=sharing</description>
     </item>
     
     <item>
@@ -26,12 +27,22 @@
     </item>
     
     <item>
-      <title>Ipsum</title>
-      <link>https://junnayanaiportfolio.netlify.app/blogs/ipsum/</link>
+      <title>About Me</title>
+      <link>https://junnayanaiportfolio.netlify.app/blogs/aboutme/</link>
       <pubDate>Tue, 31 Oct 2017 21:28:43 -0500</pubDate>
       
-      <guid>https://junnayanaiportfolio.netlify.app/blogs/ipsum/</guid>
-      <description>Nullam et orci eu lorem consequat tincidunt vivamus et sagittis magna sed nunc rhoncus condimentum sem. In efficitur ligula tate urna. Maecenas massa sed magna lacinia magna pellentesque lorem ipsum dolor. Nullam et orci eu lorem consequat tincidunt. Vivamus et sagittis tempus.</description>
+      <guid>https://junnayanaiportfolio.netlify.app/blogs/aboutme/</guid>
+      <description>library(tidyverse) # Load ggplot2, dplyr, and all the other tidyverse packages library(gapminder) # gapminder dataset library(here) library(janitor) Junna Yanai Bibliography My name is Junna Yanai and I am from the San Francisco Bay Area. I was born in Japan, studied in the U.S.A. until high school, and graduated from dual degree between Sciences Po Paris and Keio University for a Bachelors in Economics. I am very excited to attend London Business School.</description>
+    </item>
+    
+    <item>
+      <title>Bloomberg Investment Project</title>
+      <link>https://junnayanaiportfolio.netlify.app/blogs/bloomberg/</link>
+      <pubDate>Tue, 31 Oct 2017 21:28:43 -0500</pubDate>
+      
+      <guid>https://junnayanaiportfolio.netlify.app/blogs/bloomberg/</guid>
+      <description>During my 3rd year in undergraduate studies, I participated in the Bloomberg ESG Investment Contest 2020. We created a portfolio of Japanese equities based on our ARIMA/GARCH financial analysis as well as ESG criterias we set ourselves.
+The full report from the Bloomberg contest can be accessed from here: https://drive.google.com/file/d/1qeQTwejTBFWLKCauO3KR2LB79yC-aU6o/view?usp=sharing</description>
     </item>
     
   </channel>
