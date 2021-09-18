@@ -6,7 +6,7 @@ googleAnalytics: ''
 disqusShortname: ''
 params:
   banner:
-    buttonText: My Linkedin
+    #buttonText: My Linkedin
     #subtitle: |-
       #A RESPONSIVE SITE TEMPLATE DESIGNED BY HTML5 UP
       #AND RELEASED UNDER THE CREATIVE COMMONS.
@@ -106,7 +106,7 @@ params:
         title: Past Research Paper
         url: blogs/ResearchPaper
       - image: ARIMA.jpg
-        subtitle: Feugiat Amet Tempus
+        subtitle: During my 3rd year in undergraduate studies, I participated in the Bloomberg ESG Investment Contest 2020.
         title: Bloomberg Project
         url: blogs/Bloomberg
   #two:
