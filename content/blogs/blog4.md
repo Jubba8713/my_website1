@@ -17,6 +17,7 @@ library(tidyverse)  # Load ggplot2, dplyr, and all the other tidyverse packages
 library(gapminder)  # gapminder dataset
 library(here)
 library(janitor)
+library(knitr)
 ```
 
 # Junna Yanai Bibliography 
