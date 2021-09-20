@@ -11,7 +11,7 @@ slug: project1
 title: Ggplot Project 1 
 ---
 
-<script src="Project1_files/header-attrs/header-attrs.js"></script>
+<script src="/rmarkdown-libs/header-attrs/header-attrs.js"></script>
 
 
 <p>Utilizing packages like lubridate and tidyverse to manipulate the data as well as ggplot to visualize, I have worked in teams to create the following codes.</p>
@@ -169,38 +169,44 @@ data(drinks)</code></pre>
 <div id="finding-the-top-25-beer-consuming-countries" class="section level3">
 <h3>Finding the top 25 beer consuming countries</h3>
 <pre class="r"><code>#Create a plot to show the top 25 beer consuming countries
-drinks %&gt;%
+plot1&lt;-drinks %&gt;%
   slice_max(order_by=beer_servings, n=25) %&gt;%  #Select the top 25 beer consuming countries data
   ggplot(aes(x=beer_servings, y=reorder(country,beer_servings))) + # Plot the data, descending order
   geom_col() +
   theme_bw() +
   labs(title=&#39;Beer Consumption by Country&#39;, subtitle= &#39;Top 25&#39;, x=&#39;Servings (per person)&#39;, y=&#39;Country&#39;) + 
-  NULL</code></pre>
-<p><img src="Project1_files/figure-html/beer_plot-1.png" width="648" style="display: block; margin: auto;" /></p>
+  NULL
+
+plot1</code></pre>
+<p><img src="/blogs/project1_files/figure-html/beer_plot-1.png" width="648" style="display: block; margin: auto;" /></p>
 </div>
 <div id="finding-the-top-25-wine-consuming-countries" class="section level3">
 <h3>Finding the top 25 wine consuming countries</h3>
 <pre class="r"><code>#Create a plot to show the top 25 wine consuming countries
-drinks %&gt;%
+plot2 &lt;- drinks %&gt;%
   slice_max(order_by=wine_servings, n=25) %&gt;% #Select the top 25 wine consuming countries
   ggplot(aes(x=wine_servings, y=reorder(country, wine_servings)))+ # Plot the data, descending order
   geom_col() +
   theme_bw() +
   labs(title=&#39;Wine Consumption by Country&#39;,subtitle= &#39;Top 25&#39;, x=&#39;Servings (per person)&#39;, y=&#39;Country&#39;) + 
-  NULL</code></pre>
-<p><img src="Project1_files/figure-html/wine_plot-1.png" width="648" style="display: block; margin: auto;" /></p>
+  NULL
+
+plot2</code></pre>
+<p><img src="/blogs/project1_files/figure-html/wine_plot-1.png" width="648" style="display: block; margin: auto;" /></p>
 </div>
 <div id="finding-the-top-25-spirit-consuming-countries" class="section level3">
 <h3>Finding the top 25 spirit consuming countries</h3>
 <pre class="r"><code>#Create a plot to show the top 25 spirit consuming countries
-drinks %&gt;%
+plot3 &lt;- drinks %&gt;%
   slice_max(order_by=spirit_servings, n=25) %&gt;% #Select the top 25 spirit consuming countries
   ggplot(aes(x=spirit_servings, y=reorder(country,spirit_servings))) + # Plot the data, descending order
   geom_col() +
   theme_bw() +
   labs(title=&#39;Spirit Consumption by Country&#39;, subtitle= &#39;Top 25&#39;, x=&#39;Servings (per person)&#39;, y=&#39;Country&#39;) + 
-  NULL</code></pre>
-<p><img src="Project1_files/figure-html/spirit_plot-1.png" width="648" style="display: block; margin: auto;" /></p>
+  NULL
+
+plot3</code></pre>
+<p><img src="/blogs/project1_files/figure-html/spirit_plot-1.png" width="648" style="display: block; margin: auto;" /></p>
 <blockquote>
 <p>INFERENCE</p>
 </blockquote>
@@ -391,19 +397,21 @@ movies %&gt;%
 ## 16 Thriller     4.8    4.8   4.8   4.8  NA   
 ## 17 Western      5.7    4.1   7.3   5.7   2.26</code></pre>
 <pre class="r"><code>#Create histogram that shows how ratings are distributed by genre
-movies %&gt;%
+plot4 &lt;- movies %&gt;%
   ggplot(aes(x=rating)) +
   geom_histogram(binwidth=0.5) +
   facet_wrap(~genre) +
   theme_bw() +
   labs(title=&#39;Rating distribution by genre&#39;, x=&#39;Rating&#39;, y=&#39;Number of movies&#39;) + 
-  NULL</code></pre>
-<p><img src="Project1_files/figure-html/unnamed-chunk-5-1.png" width="648" style="display: block; margin: auto;" /></p>
+  NULL
+
+plot4</code></pre>
+<p><img src="/blogs/project1_files/figure-html/unnamed-chunk-5-1.png" width="648" style="display: block; margin: auto;" /></p>
 </div>
 <div id="scatterplot-for-gross-and-cast_facebook_likes" class="section level2">
 <h2>Scatterplot for <code>gross</code> and <code>cast_facebook_likes</code></h2>
 <pre class="r"><code>#Create scatterplot to examine the relationship between gross and cast_facebook_likes
-movies %&gt;%
+plot5 &lt;- movies %&gt;%
   ggplot(aes(x=cast_facebook_likes, y=gross, alpha=.01)) + #Make the points opaque to see where there are denser areas
   geom_point() +
   geom_smooth() +
@@ -412,8 +420,10 @@ movies %&gt;%
   theme_bw() +
   labs(title=&#39;Relationship Between Gross Profit and Facebook Likes&#39;, x=&#39;Facebook Likes&#39;, y=&#39;Gross Profit&#39;) + 
   theme(legend.position = &quot;none&quot;) +
-  NULL</code></pre>
-<p><img src="Project1_files/figure-html/gross_on_fblikes-1.png" width="648" style="display: block; margin: auto;" /></p>
+  NULL
+
+plot5</code></pre>
+<p><img src="/blogs/project1_files/figure-html/gross_on_fblikes-1.png" width="648" style="display: block; margin: auto;" /></p>
 <blockquote>
 <p>INFERENCE</p>
 </blockquote>
@@ -426,15 +436,17 @@ makes.</p>
 <div id="scatterplot-between-gross-and-budget." class="section level3">
 <h3>Scatterplot between <code>gross</code> and <code>budget</code>.</h3>
 <pre class="r"><code>#Create scatterplot to examine the relationship between gross and budget
-movies %&gt;%
+plot6 &lt;- movies %&gt;%
   ggplot(aes(x=budget, y=gross, alpha=.01)) + #Make the points opaque to see where there are denser areas
   geom_point() +
   geom_smooth() +
   theme_bw() +
   labs(title=&#39;Relationship Between Gross Profit and Budget&#39;, x=&#39;Budget&#39;, y=&#39;Gross Profit&#39;) +
   theme(legend.position = &quot;none&quot;) +
-  NULL</code></pre>
-<p><img src="Project1_files/figure-html/gross_on_budget-1.png" width="648" style="display: block; margin: auto;" /></p>
+  NULL
+
+plot6</code></pre>
+<p><img src="/blogs/project1_files/figure-html/gross_on_budget-1.png" width="648" style="display: block; margin: auto;" /></p>
 <blockquote>
 <p>INFERENCE</p>
 </blockquote>
@@ -445,14 +457,16 @@ variability and we cannot conclude that the relationship is significant.</p>
 <div id="scatterplot-between-gross-and-rating." class="section level3">
 <h3>Scatterplot between <code>gross</code> and <code>rating</code>.</h3>
 <pre class="r"><code>#Create scatterplot to examine the relationship between gross and ratings, faceted by genre
-movies %&gt;%
+plot7 &lt;- movies %&gt;%
   ggplot(aes(x=rating, y=gross)) +
   geom_point() +
   facet_wrap(~genre) +
   theme_bw() +
   labs(title=&#39;Relationship Between Gross Profit and Rating&#39;, subtitle= &#39;By Genre&#39;, x=&#39;Rating&#39;, y=&#39;Gross Profit&#39;) + 
-  NULL</code></pre>
-<p><img src="Project1_files/figure-html/gross_on_rating-1.png" width="648" style="display: block; margin: auto;" />
+  NULL
+
+plot7</code></pre>
+<p><img src="/blogs/project1_files/figure-html/gross_on_rating-1.png" width="648" style="display: block; margin: auto;" />
 &gt; INFERENCE</p>
 <p>Our hypothesis before examining the data was that rating would be a good
 predictor of gross profit. While we see that is the case for Action,
@@ -517,15 +531,17 @@ nyse %&gt;%
 ## 11 Transportation           10
 ## 12 Consumer Durables         8</code></pre>
 <pre class="r"><code>#Create bar plot for numbers of companies per sector in descending order
-nyse %&gt;%
+plot8 &lt;- nyse %&gt;%
   group_by(sector) %&gt;%
   count(sort=T) %&gt;%
   ggplot(aes(x=n, y=fct_reorder(sector, n))) +
   geom_col() +
   theme_bw() +
   labs(title=&#39;Number of Stocks By Sector&#39;, x=&#39;Number of Stocks&#39;, y=&#39;Sector&#39;) + 
-  NULL</code></pre>
-<p><img src="Project1_files/figure-html/companies_per_sector-1.png" width="648" style="display: block; margin: auto;" /></p>
+  NULL
+
+plot8</code></pre>
+<p><img src="/blogs/project1_files/figure-html/companies_per_sector-1.png" width="648" style="display: block; margin: auto;" /></p>
 <p>Next, let’s choose some stocks and their ticker symbols and download
 some data. You <strong>MUST</strong> choose 6 different stocks from the ones listed
 below; You should, however, add <code>SPY</code> which is the SP500 ETF (Exchange
@@ -603,15 +619,17 @@ myStocks_returns_monthly %&gt;%
 ## 6 SPY    -0.125 0.127  0.017 0.012 0.038</code></pre>
 <p>Plot a density plot, using <code>geom_density()</code>, for each of the stocks</p>
 <pre class="r"><code>#Create a density plot for each stocks
-myStocks_returns_monthly %&gt;%
+plot9 &lt;- myStocks_returns_monthly %&gt;%
   ggplot(aes(x=monthly_returns, colour=symbol, fill=symbol)) + 
   geom_density(alpha=0.3) +
   facet_wrap(~symbol) +
   theme_bw() +
   theme(legend.position=&#39;none&#39;) +
   labs(title=&#39;Density Plot of Monthly Returns&#39;, x=&#39;Return&#39;, y=&#39;Density&#39;) +
-  NULL</code></pre>
-<p><img src="Project1_files/figure-html/density_monthly_returns-1.png" width="648" style="display: block; margin: auto;" /></p>
+  NULL
+
+plot9 </code></pre>
+<p><img src="/blogs/project1_files/figure-html/density_monthly_returns-1.png" width="648" style="display: block; margin: auto;" /></p>
 <blockquote>
 <p>What can you infer from this plot? Which stock is the riskiest? The
 least risky?</p>
@@ -624,7 +642,7 @@ According to the density plot, the <em>most</em> risky stock is <strong>ANF</str
 stock on the Y axis and the risk (standard deviation) in the X-axis.
 Please use <code>ggrepel::geom_text_repel()</code> to label each stock</p>
 <pre class="r"><code>#Create a plot to identify the expected monthly return(mean) and rish(SD) of each stock
-myStocks_returns_monthly %&gt;%
+plot10 &lt;- myStocks_returns_monthly %&gt;%
   group_by(symbol) %&gt;%
   summarise(
     sd=sd(monthly_returns),
@@ -634,8 +652,10 @@ myStocks_returns_monthly %&gt;%
   theme_bw() +
   ggrepel::geom_text_repel() + #Label each stock
   labs(title=&#39;Risk and Return Plot for Selected Stocks&#39;, x=&#39;Risk&#39;, y=&#39;Return&#39;) +
-  NULL</code></pre>
-<p><img src="Project1_files/figure-html/risk_return_plot-1.png" width="648" style="display: block; margin: auto;" />
+  NULL
+
+plot10</code></pre>
+<p><img src="/blogs/project1_files/figure-html/risk_return_plot-1.png" width="648" style="display: block; margin: auto;" />
 &gt; What can you infer from this plot? Are there any stocks which, while
 being riskier, do not have a higher expected return?</p>
 <p>This plot depicts the risk-return relationship of each stock. While DPZ
@@ -821,70 +841,82 @@ hr_cleaned %&gt;%
 <div id="boxplot-between-monthly-income-and-education" class="section level3">
 <h3>Boxplot between monthly income and education</h3>
 <pre class="r"><code>#Create a box plot to examine the relationship between monthly income and education
-hr_cleaned %&gt;%
+plot11 &lt;- hr_cleaned %&gt;%
   ggplot(aes(x=monthly_income, y=reorder(education, monthly_income))) +
   geom_boxplot() +
   theme_bw() +
   labs(title=&#39;Relationship Between Education and Monthly Income&#39;, x=&#39;Monthly Income&#39;, y=&#39;Education&#39;) +
-  NULL</code></pre>
-<p><img src="Project1_files/figure-html/HR%20question4-1.png" width="648" style="display: block; margin: auto;" /></p>
+  NULL
+
+plot11 </code></pre>
+<p><img src="/blogs/project1_files/figure-html/HR%20question4-1.png" width="648" style="display: block; margin: auto;" /></p>
 <pre class="r"><code>#Create a box plot to examine the relationship between monthly income and gender
-hr_cleaned %&gt;%
+plot12 &lt;- hr_cleaned %&gt;%
   ggplot(aes(x=monthly_income, y=reorder(gender, monthly_income))) +
   geom_boxplot() +
   theme_bw() +
   labs(title=&#39;Relationship Between Gender and Monthly Income&#39;, x=&#39;Monthly Income&#39;, y=&#39;Gender&#39;) +
-  NULL</code></pre>
-<p><img src="Project1_files/figure-html/HR%20question4-2.png" width="648" style="display: block; margin: auto;" /></p>
+  NULL
+
+plot12</code></pre>
+<p><img src="/blogs/project1_files/figure-html/HR%20question4-2.png" width="648" style="display: block; margin: auto;" /></p>
 </div>
 <div id="boxplot-of-income-vs-job-role." class="section level3">
 <h3>Boxplot of income vs job role.</h3>
 <pre class="r"><code>#Create a box plot to examine the relationship between monthly income and job role
-hr_cleaned %&gt;%
+plot13 &lt;- hr_cleaned %&gt;%
   ggplot(aes(x=monthly_income, y=reorder(job_role, monthly_income))) + #Make the job roles appear in descending order of monthly income
   geom_boxplot() +
   theme_bw() +
   labs(title=&#39;Relationship Between Job Role and Monthly Income&#39;, x=&#39;Monthly Income&#39;, y=&#39;Job Role&#39;) +
-  NULL</code></pre>
-<p><img src="Project1_files/figure-html/HR%20question5-1.png" width="648" style="display: block; margin: auto;" /></p>
+  NULL
+
+plot13</code></pre>
+<p><img src="/blogs/project1_files/figure-html/HR%20question5-1.png" width="648" style="display: block; margin: auto;" /></p>
 </div>
 <div id="bar-chart-of-the-mean-or-median-income-by-education-level." class="section level3">
 <h3>Bar chart of the mean (or median?) income by education level.</h3>
 <pre class="r"><code>#Create a bar chart of mean income by education level
-hr_cleaned %&gt;%
+plot14 &lt;- hr_cleaned %&gt;%
   group_by(education) %&gt;%
   summarise(mean=mean(monthly_income)) %&gt;% #Calculate the mean income
   ggplot(aes(x=education, y=mean)) +
   geom_col() +
   theme_bw() +
   labs(title=&#39;Relationship Between Education and Average Monthly Income&#39;, x=&#39;Education&#39;, y=&#39;Average Monthly Income&#39;) +
-  NULL</code></pre>
-<p><img src="Project1_files/figure-html/HR%20question6-1.png" width="648" style="display: block; margin: auto;" /></p>
+  NULL
+
+plot14</code></pre>
+<p><img src="/blogs/project1_files/figure-html/HR%20question6-1.png" width="648" style="display: block; margin: auto;" /></p>
 </div>
 <div id="density-plot-of-monthly-income-by-education-level" class="section level3">
 <h3>Density plot of monthly income by education level</h3>
 <pre class="r"><code>#Create a density plot of monthly income by education level, faceted by education level
-hr_cleaned %&gt;%
+plot15 &lt;- hr_cleaned %&gt;%
   ggplot(aes(x=monthly_income, colour=education, fill=education)) +
   geom_density(alpha=0.3) +
   facet_wrap(~education) +
   theme_solid() +
   theme(legend.position=&#39;none&#39;, text=element_text(size=10)) +
   labs(title=&#39;Density Plot of Monthly Income&#39;, subtitle=&#39;By Education Level&#39;, x=&#39;Monthly Income&#39;, y=&#39;Density&#39;) +
-  NULL</code></pre>
-<p><img src="Project1_files/figure-html/HR%20question7-1.png" width="648" style="display: block; margin: auto;" /></p>
+  NULL
+
+plot15</code></pre>
+<p><img src="/blogs/project1_files/figure-html/HR%20question7-1.png" width="648" style="display: block; margin: auto;" /></p>
 <ol start="8" style="list-style-type: decimal">
 <li>Plot income vs age, faceted by <code>job_role</code>.</li>
 </ol>
 <pre class="r"><code>#Create a scatter plot if income vs age, facted by job roles
-hr_cleaned %&gt;%
+plot16 &lt;- hr_cleaned %&gt;%
   ggplot(aes(y=monthly_income, x=age, color=job_role)) +
   facet_wrap(~job_role) +
   geom_point() +
   theme(legend.position=&#39;none&#39;) +
   labs(title=&#39;Relationship Between Age and Monthly Income&#39;, subtitle=&#39;By Job Role&#39;, x=&#39;Monthly Income&#39;, y=&#39;Age&#39;) +
-  NULL</code></pre>
-<p><img src="Project1_files/figure-html/HR%20question8-1.png" width="648" style="display: block; margin: auto;" /></p>
+  NULL
+
+plot16</code></pre>
+<p><img src="/blogs/project1_files/figure-html/HR%20question8-1.png" width="648" style="display: block; margin: auto;" /></p>
 <blockquote>
 <p>INFERENCE</p>
 </blockquote>
@@ -1018,7 +1050,7 @@ data %&gt;%
   scale_x_continuous(breaks=seq(0, 100, 5)) +
   scale_y_continuous(breaks=seq(0, 100, 5)) +
   NULL</code></pre>
-<p><img src="Project1_files/figure-html/chall1-1.png" width="648" style="display: block; margin: auto;" /></p>
+<p><img src="/blogs/project1_files/figure-html/chall1-1.png" width="648" style="display: block; margin: auto;" /></p>
 </div>
 <div id="challenge-2-opinion-polls-for-the-2021-german-elections" class="section level1">
 <h1>Challenge 2: Opinion polls for the 2021 German elections</h1>
@@ -1100,7 +1132,7 @@ plot &lt;- german_election_polls_cleaned %&gt;%
 ggsave(file=&#39;elections_plot.png&#39;, plot=plot, width=18, height=8)
 
 plot</code></pre>
-<p><img src="Project1_files/figure-html/chall2-1.png" width="648" style="display: block; margin: auto;" /></p>
+<p><img src="/blogs/project1_files/figure-html/chall2-1.png" width="648" style="display: block; margin: auto;" /></p>
 </div>
 <div id="details" class="section level1">
 <h1>Details</h1>

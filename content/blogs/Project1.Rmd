@@ -64,39 +64,45 @@ drinks %>% skim #Skim the data for variable types and missing values.
 
 ```{r beer_plot}
 #Create a plot to show the top 25 beer consuming countries
-drinks %>%
+plot1<-drinks %>%
   slice_max(order_by=beer_servings, n=25) %>%  #Select the top 25 beer consuming countries data
   ggplot(aes(x=beer_servings, y=reorder(country,beer_servings))) + # Plot the data, descending order
   geom_col() +
   theme_bw() +
   labs(title='Beer Consumption by Country', subtitle= 'Top 25', x='Servings (per person)', y='Country') + 
   NULL
+
+plot1
 ```
 
 ### Finding the top 25 wine consuming countries 
 
 ```{r wine_plot}
 #Create a plot to show the top 25 wine consuming countries
-drinks %>%
+plot2 <- drinks %>%
   slice_max(order_by=wine_servings, n=25) %>% #Select the top 25 wine consuming countries
   ggplot(aes(x=wine_servings, y=reorder(country, wine_servings)))+ # Plot the data, descending order
   geom_col() +
   theme_bw() +
   labs(title='Wine Consumption by Country',subtitle= 'Top 25', x='Servings (per person)', y='Country') + 
   NULL
+
+plot2
 ```
 
 ### Finding the top 25 spirit consuming countries 
 
 ```{r spirit_plot}
 #Create a plot to show the top 25 spirit consuming countries
-drinks %>%
+plot3 <- drinks %>%
   slice_max(order_by=spirit_servings, n=25) %>% #Select the top 25 spirit consuming countries
   ggplot(aes(x=spirit_servings, y=reorder(country,spirit_servings))) + # Plot the data, descending order
   geom_col() +
   theme_bw() +
   labs(title='Spirit Consumption by Country', subtitle= 'Top 25', x='Servings (per person)', y='Country') + 
   NULL
+
+plot3
 ```
 
 > INFERENCE
@@ -209,20 +215,22 @@ movies %>%
   mutate(across(2:6, round, 2)) # round columns 2 through 6 to 2 decimal places
 
 #Create histogram that shows how ratings are distributed by genre
-movies %>%
+plot4 <- movies %>%
   ggplot(aes(x=rating)) +
   geom_histogram(binwidth=0.5) +
   facet_wrap(~genre) +
   theme_bw() +
   labs(title='Rating distribution by genre', x='Rating', y='Number of movies') + 
   NULL
+
+plot4
 ```
 
 ## Scatterplot for `gross` and `cast_facebook_likes`
 
 ```{r, gross_on_fblikes}
 #Create scatterplot to examine the relationship between gross and cast_facebook_likes
-movies %>%
+plot5 <- movies %>%
   ggplot(aes(x=cast_facebook_likes, y=gross, alpha=.01)) + #Make the points opaque to see where there are denser areas
   geom_point() +
   geom_smooth() +
@@ -232,6 +240,8 @@ movies %>%
   labs(title='Relationship Between Gross Profit and Facebook Likes', x='Facebook Likes', y='Gross Profit') + 
   theme(legend.position = "none") +
   NULL
+
+plot5
 ```
 
 > INFERENCE
@@ -247,7 +257,7 @@ makes.
 
 ```{r, gross_on_budget}
 #Create scatterplot to examine the relationship between gross and budget
-movies %>%
+plot6 <- movies %>%
   ggplot(aes(x=budget, y=gross, alpha=.01)) + #Make the points opaque to see where there are denser areas
   geom_point() +
   geom_smooth() +
@@ -255,6 +265,8 @@ movies %>%
   labs(title='Relationship Between Gross Profit and Budget', x='Budget', y='Gross Profit') +
   theme(legend.position = "none") +
   NULL
+
+plot6
 ```
 
 > INFERENCE
@@ -267,13 +279,15 @@ variability and we cannot conclude that the relationship is significant.
 
 ```{r, gross_on_rating}
 #Create scatterplot to examine the relationship between gross and ratings, faceted by genre
-movies %>%
+plot7 <- movies %>%
   ggplot(aes(x=rating, y=gross)) +
   geom_point() +
   facet_wrap(~genre) +
   theme_bw() +
   labs(title='Relationship Between Gross Profit and Rating', subtitle= 'By Genre', x='Rating', y='Gross Profit') + 
   NULL
+
+plot7
 ```
 > INFERENCE
 
@@ -322,7 +336,7 @@ nyse %>%
   count(sort=T)
 
 #Create bar plot for numbers of companies per sector in descending order
-nyse %>%
+plot8 <- nyse %>%
   group_by(sector) %>%
   count(sort=T) %>%
   ggplot(aes(x=n, y=fct_reorder(sector, n))) +
@@ -330,6 +344,8 @@ nyse %>%
   theme_bw() +
   labs(title='Number of Stocks By Sector', x='Number of Stocks', y='Sector') + 
   NULL
+
+plot8
 ```
 
 Next, let's choose some stocks and their ticker symbols and download
@@ -402,7 +418,7 @@ Plot a density plot, using `geom_density()`, for each of the stocks
 
 ```{r density_monthly_returns}
 #Create a density plot for each stocks
-myStocks_returns_monthly %>%
+plot9 <- myStocks_returns_monthly %>%
   ggplot(aes(x=monthly_returns, colour=symbol, fill=symbol)) + 
   geom_density(alpha=0.3) +
   facet_wrap(~symbol) +
@@ -410,6 +426,8 @@ myStocks_returns_monthly %>%
   theme(legend.position='none') +
   labs(title='Density Plot of Monthly Returns', x='Return', y='Density') +
   NULL
+
+plot9 
 ```
 
 > What can you infer from this plot? Which stock is the riskiest? The
@@ -426,7 +444,7 @@ Please use `ggrepel::geom_text_repel()` to label each stock
 
 ```{r risk_return_plot}
 #Create a plot to identify the expected monthly return(mean) and rish(SD) of each stock
-myStocks_returns_monthly %>%
+plot10 <- myStocks_returns_monthly %>%
   group_by(symbol) %>%
   summarise(
     sd=sd(monthly_returns),
@@ -437,6 +455,8 @@ myStocks_returns_monthly %>%
   ggrepel::geom_text_repel() + #Label each stock
   labs(title='Risk and Return Plot for Selected Stocks', x='Risk', y='Return') +
   NULL
+
+plot10
 ```
 > What can you infer from this plot? Are there any stocks which, while
 being riskier, do not have a higher expected return?
@@ -552,39 +572,45 @@ hr_cleaned %>%
 
 ```{r HR question4}
 #Create a box plot to examine the relationship between monthly income and education
-hr_cleaned %>%
+plot11 <- hr_cleaned %>%
   ggplot(aes(x=monthly_income, y=reorder(education, monthly_income))) +
   geom_boxplot() +
   theme_bw() +
   labs(title='Relationship Between Education and Monthly Income', x='Monthly Income', y='Education') +
   NULL
 
+plot11 
+
 #Create a box plot to examine the relationship between monthly income and gender
-hr_cleaned %>%
+plot12 <- hr_cleaned %>%
   ggplot(aes(x=monthly_income, y=reorder(gender, monthly_income))) +
   geom_boxplot() +
   theme_bw() +
   labs(title='Relationship Between Gender and Monthly Income', x='Monthly Income', y='Gender') +
   NULL
+
+plot12
 ```
 
 ### Boxplot of income vs job role. 
 
 ```{r HR question5}
 #Create a box plot to examine the relationship between monthly income and job role
-hr_cleaned %>%
+plot13 <- hr_cleaned %>%
   ggplot(aes(x=monthly_income, y=reorder(job_role, monthly_income))) + #Make the job roles appear in descending order of monthly income
   geom_boxplot() +
   theme_bw() +
   labs(title='Relationship Between Job Role and Monthly Income', x='Monthly Income', y='Job Role') +
   NULL
+
+plot13
 ```
     
 ### Bar chart of the mean (or median?) income by education level.
 
 ```{r HR question6}
 #Create a bar chart of mean income by education level
-hr_cleaned %>%
+plot14 <- hr_cleaned %>%
   group_by(education) %>%
   summarise(mean=mean(monthly_income)) %>% #Calculate the mean income
   ggplot(aes(x=education, y=mean)) +
@@ -592,13 +618,15 @@ hr_cleaned %>%
   theme_bw() +
   labs(title='Relationship Between Education and Average Monthly Income', x='Education', y='Average Monthly Income') +
   NULL
+
+plot14
 ```
 
 ### Density plot of monthly income by education level
 
 ```{r HR question7}
 #Create a density plot of monthly income by education level, faceted by education level
-hr_cleaned %>%
+plot15 <- hr_cleaned %>%
   ggplot(aes(x=monthly_income, colour=education, fill=education)) +
   geom_density(alpha=0.3) +
   facet_wrap(~education) +
@@ -606,19 +634,23 @@ hr_cleaned %>%
   theme(legend.position='none', text=element_text(size=10)) +
   labs(title='Density Plot of Monthly Income', subtitle='By Education Level', x='Monthly Income', y='Density') +
   NULL
+
+plot15
 ```
 
 8.  Plot income vs age, faceted by `job_role`.
 
 ```{r HR question8}
 #Create a scatter plot if income vs age, facted by job roles
-hr_cleaned %>%
+plot16 <- hr_cleaned %>%
   ggplot(aes(y=monthly_income, x=age, color=job_role)) +
   facet_wrap(~job_role) +
   geom_point() +
   theme(legend.position='none') +
   labs(title='Relationship Between Age and Monthly Income', subtitle='By Job Role', x='Monthly Income', y='Age') +
   NULL
+
+plot16
 ```
 
 > INFERENCE

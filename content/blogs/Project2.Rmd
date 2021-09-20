@@ -396,12 +396,6 @@ approval_polllist <- approval_polllist %>%
 glimpse(approval_polllist)
 ```
 
-## Create a plot
- 
-```{r trump_margins, out.width="100%"}
-knitr::include_graphics("../images/biden_approval_margin.png", error = FALSE)
-```
-
 ### Replicating the Biden Approval Margin graph
 
 ```{r}
@@ -422,7 +416,7 @@ plot <- approval_polllist %>%
   ) %>%
   
   #Scatterplot of the calculated net approval rate means by week 
-  ggplot(aes(x=week, y=mean)) + 
+plot1 <- ggplot(aes(x=week, y=mean)) + 
   geom_point(colour='red') + #Scatterplot using red points
   geom_line(colour='red', size=0.25) + #Adding a red line to connect the points
   geom_ribbon(aes(ymin=lower, ymax=upper), colour='red', linetype=1, alpha=0.1, size=0.25) +
@@ -435,8 +429,7 @@ plot <- approval_polllist %>%
        y='Average Approval Margin (Approve - Disapprove)') + #Y-label
   NULL
 
-ggsave(file='biden_plot.png', plot=plot, width=12, height=8) #Saving to adjust image width
-knitr::include_graphics("biden_plot.png", error=F)
+plot1
 ```
 
 ## Compare Confidence Intervals
@@ -490,6 +483,7 @@ data_join <- hiv_long %>%
 
 data_join
 ```
+
 ### The reasoning behind our join operation choices
 
 > INFERENCE
@@ -628,21 +622,11 @@ bike <- bike0 %>%
           week = isoweek(day))
 ```
 
-### Facet grid by month and year
-
-```{r tfl_month_year_grid, out.width="100%"}
-knitr::include_graphics("../images/tfl_distributions_monthly.png", error=F)
-```
-
 > INFERENCE
 
-The grid above shows a large decrease in bike rentals in May and June 2020 compared to previous years. This huge decrease is clearly to do with COVID-19 lockdowns since people had to stay inside. We can also see that May and June have some variability year to year which most likely has to do with weather conditions in those two months (i.e. if it's warmer in May 2018 than in May 2017, there would be more bike rentals in 2018).
+The grid shows a large decrease in bike rentals in May and June 2020 compared to previous years. This huge decrease is clearly to do with COVID-19 lockdowns since people had to stay inside. We can also see that May and June have some variability year to year which most likely has to do with weather conditions in those two months (i.e. if it's warmer in May 2018 than in May 2017, there would be more bike rentals in 2018).
 
-### Reproduce the following two graphs.
-
-```{r tfl_absolute_monthly_change, out.width="100%"}
-knitr::include_graphics("../images/tfl_monthly.png", error=F)
-```
+### Reproducing bike graphs
 
 ```{r}
 # Clean the data 
@@ -652,7 +636,7 @@ bike_exp <- bike %>%
   summarise(expected_rentals=mean(bikes_hired)) # Calculate the expected rentals
 
 # Replicate the first graph of actual and expected rentals for each month across years
-plot <- bike %>%
+plot2 <- bike %>%
   filter(year > 2015) %>%
   group_by(year, month) %>%
   summarise(actual_rentals=mean(bikes_hired)) %>% # Calculate the actual mean rentals for each month
@@ -670,15 +654,10 @@ plot <- bike %>%
   labs(title="Monthly changes in TfL bike rentals", subtitle="Change from monthly average shown in blue and calculated between 2016-2019", x="", y="Bike rentals") +
   NULL
 
-ggsave(file='bike1_plot.png', plot=plot, width=12, height=8) # Create and save the plot
-knitr::include_graphics("bike1_plot.png", error=F)
+plot2
 ```
 
-### Replicate the second graph of percentage changes from the expected level of weekly rentals.
-
-```{r tfl_percent_change, out.width="100%"}
-knitr::include_graphics("../images/tfl_weekly.png", error=F)
-```
+### Second graph
 
 ```{r}
 # Clean the data
@@ -689,7 +668,7 @@ bike_exp_week <- bike %>%
   summarise(expected_rentals=mean(bikes_hired))
 
 # Make the graph
-plot <- bike %>%
+plot3 <- bike %>%
   filter(year > 2015) %>%
   mutate(week=if_else(month == 'Jan' & week == 53, 1, week)) %>%
   group_by(year, week) %>%
@@ -713,8 +692,7 @@ plot <- bike %>%
   labs(title="Weekly changes in TfL bike rentals", subtitle="% change from weekly averages calculated between 2016-2019", x="week", y="") +
   NULL
 
-ggsave(file='bike2_plot.png', plot=plot, width=12, height=8) # Create and save the plot
-knitr::include_graphics("bike2_plot.png", error=F)
+plot3
 ```
 
 Should you use the mean or the median to calculate your expected rentals? Why?
