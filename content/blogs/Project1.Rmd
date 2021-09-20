@@ -6,7 +6,7 @@ description: In this Project, my team and I visualized the trends from various d
 draft: no
 image: picLBS.jpg
 keywords: ''
-slug: Project1
+slug: project1
 categories:
 - ''
 - ''
