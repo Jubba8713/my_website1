@@ -8,7 +8,7 @@ draft: false
 image: picLBS.jpg
 keywords: ""
 slug: project1
-title: Ggplot Project 1
+title: Ggplot Project 1 
 ---
 Utilizing packages like lubridate and tidyverse to manipulate the data as well as ggplot to visualize, I have worked in teams to create the following codes. 
 
