@@ -8,7 +8,7 @@ draft: false
 image: picSKY.jpg
 keywords: ""
 slug: project2
-title: Ggplot Project 2
+title: Ggplot Project 2 
 ---
 
 <script src="/rmarkdown-libs/header-attrs/header-attrs.js"></script>
@@ -167,7 +167,7 @@ ggplot(tidyweather, aes(x=date, y = delta))+  #Plotting delta by date
     y = &quot;Delta&quot;
   ) +
   NULL</code></pre>
-<p><img src="/blogs/Project2_files/figure-html/scatter_plot-1.png" width="648" style="display: block; margin: auto;" /></p>
+<p><img src="/blogs/project2_files/figure-html/scatter_plot-1.png" width="648" style="display: block; margin: auto;" /></p>
 <div id="scatterplot-for-each-month-using-facet_wrap" class="section level3">
 <h3>Scatterplot for each month using facet_wrap()</h3>
 <pre class="r"><code>tidyweather %&gt;%
@@ -182,7 +182,7 @@ ggplot(tidyweather, aes(x=date, y = delta))+  #Plotting delta by date
     y = &quot;Delta&quot;
   ) +
   NULL</code></pre>
-<p><img src="/blogs/Project2_files/figure-html/facet_wrap-1.png" width="648" style="display: block; margin: auto;" /></p>
+<p><img src="/blogs/project2_files/figure-html/facet_wrap-1.png" width="648" style="display: block; margin: auto;" /></p>
 <blockquote>
 <p>INFERENCE</p>
 </blockquote>
@@ -210,7 +210,7 @@ ggplot(tidyweather, aes(x=date, y = delta))+  #Plotting delta by date
     title = &quot;Density Plot for Monthly Temperature Anomalies&quot;,
     y     = &quot;Density&quot;         #changing y-axis label to sentence case
   )</code></pre>
-<p><img src="/blogs/Project2_files/figure-html/density_plot-1.png" width="648" style="display: block; margin: auto;" /></p>
+<p><img src="/blogs/project2_files/figure-html/density_plot-1.png" width="648" style="display: block; margin: auto;" /></p>
 </div>
 <div id="average-annual-anomalies" class="section level3">
 <h3>Average annual anomalies</h3>
@@ -229,7 +229,7 @@ ggplot(average_annual_anomaly, aes(x=Year, y=annual_average_delta))+
     y     = &quot;Average Annual Delta&quot; #y-axis label
   ) +
   NULL</code></pre>
-<p><img src="/blogs/Project2_files/figure-html/averaging-1.png" width="648" style="display: block; margin: auto;" /></p>
+<p><img src="/blogs/project2_files/figure-html/averaging-1.png" width="648" style="display: block; margin: auto;" /></p>
 </div>
 </div>
 <div id="confidence-interval-for-delta" class="section level2">
@@ -444,7 +444,7 @@ gss %&gt;%
   geom_density() +
   labs(title=&quot;Density plot for hours spent on email weekly&quot;, x=&quot;Hours spent on email weekly&quot;, y=&quot;Density&quot;) +
   NULL</code></pre>
-<p><img src="/blogs/Project2_files/figure-html/unnamed-chunk-9-1.png" width="648" style="display: block; margin: auto;" /></p>
+<p><img src="/blogs/project2_files/figure-html/unnamed-chunk-9-1.png" width="648" style="display: block; margin: auto;" /></p>
 <pre class="r"><code>#Summary statistics of hours spent on emails weekly
 gss %&gt;%
   summarise(
@@ -681,7 +681,7 @@ data_join</code></pre>
   facet_wrap(~region, scales=&#39;free&#39;) + #Creating different graphs for every region
   labs(title=&quot;Relationship between HIV prevalence and life expectancy by region&quot;, x=&quot;HIV prevalence&quot;, y=&quot;Life expectancy&quot;) +
   NULL</code></pre>
-<p><img src="/blogs/Project2_files/figure-html/unnamed-chunk-14-1.png" width="648" style="display: block; margin: auto;" /></p>
+<p><img src="/blogs/project2_files/figure-html/unnamed-chunk-14-1.png" width="648" style="display: block; margin: auto;" /></p>
 <blockquote>
 <p>INFERENCE</p>
 </blockquote>
@@ -697,7 +697,7 @@ data_join</code></pre>
   facet_wrap(~region, scales=&#39;free&#39;) + #Creating different graphs for every region
   labs(title=&quot;Relationship between fertility rate and GDP per capita by region&quot;, x=&quot;Fertility rate&quot;, y=&quot;GDP per capita&quot;) +
   NULL</code></pre>
-<p><img src="/blogs/Project2_files/figure-html/unnamed-chunk-15-1.png" width="648" style="display: block; margin: auto;" /></p>
+<p><img src="/blogs/project2_files/figure-html/unnamed-chunk-15-1.png" width="648" style="display: block; margin: auto;" /></p>
 <blockquote>
 <p>INFERENCE</p>
 </blockquote>
@@ -714,7 +714,7 @@ data_join</code></pre>
   geom_col(aes(x=n, y=reorder(region, n))) + #Bar plot of count per region
   labs(title=&quot;Missing HIV data&quot;, x=&quot;Count&quot;, y=&quot;Regions&quot;) +
   NULL</code></pre>
-<p><img src="/blogs/Project2_files/figure-html/unnamed-chunk-16-1.png" width="648" style="display: block; margin: auto;" /></p>
+<p><img src="/blogs/project2_files/figure-html/unnamed-chunk-16-1.png" width="648" style="display: block; margin: auto;" /></p>
 </div>
 <div id="mortality-rate-for-under-5-by-region-over-time-and-top-5-countries-with-the-greatest-improvement" class="section level2">
 <h2>Mortality rate for under 5 by region over time and top 5 countries with the greatest improvement</h2>
@@ -791,7 +791,7 @@ mortality_clean %&gt;%
   facet_wrap(~region) + #Creating different graphs for each region
   labs(x=&quot;Fertility rate&quot;, y=&quot;School non-enrollment rate&quot;, title=&quot;Relationship between fertility rate and school non-enrollment by region&quot;) + #Labeling x-axis and y-axis
   NULL</code></pre>
-<p><img src="/blogs/Project2_files/figure-html/unnamed-chunk-18-1.png" width="648" style="display: block; margin: auto;" /></p>
+<p><img src="/blogs/project2_files/figure-html/unnamed-chunk-18-1.png" width="648" style="display: block; margin: auto;" /></p>
 <blockquote>
 <p>INFERENCE</p>
 </blockquote>
@@ -806,12 +806,12 @@ mortality_clean %&gt;%
 
 # Download TFL data to temporary file
 httr::GET(url, write_disk(bike.temp &lt;- tempfile(fileext = &quot;.xlsx&quot;)))</code></pre>
-<pre><code>## Response [https://airdrive-secure.s3-eu-west-1.amazonaws.com/london/dataset/number-bicycle-hires/2021-08-23T14%3A32%3A29/tfl-daily-cycle-hires.xlsx?X-Amz-Algorithm=AWS4-HMAC-SHA256&amp;X-Amz-Credential=AKIAJJDIMAIVZJDICKHA%2F20210920%2Feu-west-1%2Fs3%2Faws4_request&amp;X-Amz-Date=20210920T085514Z&amp;X-Amz-Expires=300&amp;X-Amz-Signature=0c7da18e2ec8f953b5482bf4b79cb5b8a3e64835b00f4fd6a51a0b8b4b615de3&amp;X-Amz-SignedHeaders=host]
-##   Date: 2021-09-20 08:55
+<pre><code>## Response [https://airdrive-secure.s3-eu-west-1.amazonaws.com/london/dataset/number-bicycle-hires/2021-08-23T14%3A32%3A29/tfl-daily-cycle-hires.xlsx?X-Amz-Algorithm=AWS4-HMAC-SHA256&amp;X-Amz-Credential=AKIAJJDIMAIVZJDICKHA%2F20210920%2Feu-west-1%2Fs3%2Faws4_request&amp;X-Amz-Date=20210920T092401Z&amp;X-Amz-Expires=300&amp;X-Amz-Signature=02f1a5b1ddf6e8d24bbcd44399c924ed95cd16e6974898144361af01df58cb85&amp;X-Amz-SignedHeaders=host]
+##   Date: 2021-09-20 09:24
 ##   Status: 200
 ##   Content-Type: application/vnd.openxmlformats-officedocument.spreadsheetml.sheet
 ##   Size: 173 kB
-## &lt;ON DISK&gt;  /var/folders/qc/xnbqlb750wq7f9tgfp8l9p4c0000gn/T//RtmpTf2gSb/file84b46146ecfe.xlsx</code></pre>
+## &lt;ON DISK&gt;  /var/folders/qc/xnbqlb750wq7f9tgfp8l9p4c0000gn/T//RtmpYXN4Nt/file89c94f10b30.xlsx</code></pre>
 <pre class="r"><code># Use read_excel to read it as dataframe
 bike0 &lt;- read_excel(bike.temp,
                    sheet = &quot;Data&quot;,
