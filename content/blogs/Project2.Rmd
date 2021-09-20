@@ -1,16 +1,14 @@
 ---
-title: "Ggplot Project 2"
-date: '2017-10-31T22:26:09-05:00'
-description: In this project, my team and I utilized tidyverse and ggplot packages
-  to visualize data on topics ranging from temperatures and climate change to social
-  media usage via the GSS.
-draft: no
-image: picSKY.jpg
-keywords: ''
-slug: project2
 categories:
-- ''
-- ''
+- ""
+- ""
+date: "2017-10-31T22:26:13-05:00"
+description: In this project, my team and I utilized tidyverse and ggplot packages to visualize data on topics ranging from temperatures and climate change to social media usage via the GSS.
+draft: false
+image: picSKY.jpg
+keywords: ""
+slug: project2
+title: Ggplot Project 2
 ---
 
 Utilizing packages like lubridate and tidyverse to manipulate the data as well as ggplot to visualize, I have worked in teams to create the following codes. 

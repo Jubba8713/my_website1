@@ -8,7 +8,7 @@ draft: false
 image: picAbstract.jpg
 keywords: ""
 slug: researchpaper
-title: Past Research Paper
+title: Past Research Paper 
 ---
 
 During my undergraduate years, I was a part of the Fintech and People Analytics seminar where I specialized in data science applied to human resources and finance. As a culmination of my studies at the seminar, I worked with my professor to analyze trends in ESG decision making in Japan and how it is affected by leadership and company statistics. 

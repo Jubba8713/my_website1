@@ -1,20 +1,15 @@
 ---
-title: "Ggplot Project"
-date: '2017-10-31T22:26:09-05:00'
-description: In this Project, my team and I visualized the trends from various datasets
-  from alcohol consumption patterns around the world to financial stock return analysis.
-draft: no
-image: picLBS.jpg
-keywords: ''
-slug: project1
 categories:
-- ''
-- ''
-editor_options:
-  markdown:
-    wrap: 72
+- ""
+- ""
+date: "2017-10-31T22:26:13-05:00"
+description: In this Project, my team and I visualized the trends from various datasets from alcohol consumption patterns around the world to financial stock return analysis.
+draft: false
+image: picLBS.jpg
+keywords: ""
+slug: project1
+title: Ggplot Project 1
 ---
-
 Utilizing packages like lubridate and tidyverse to manipulate the data as well as ggplot to visualize, I have worked in teams to create the following codes. 
 
 ```{r, setup, echo=FALSE}

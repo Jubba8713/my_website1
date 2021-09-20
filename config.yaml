@@ -70,15 +70,15 @@ params:
       - name: Home
         url: '#'
       - name: About Me
-        url: blogs/AboutMe
+        url: blogs/aboutme
       - name: GGplot Project 1
-        url: blogs/Project1
+        url: blogs/project1
       - name: GGplot Project 2
-        url: blogs/Project2
+        url: blogs/project2
       - name: Past Research Paper
-        url: blogs/ResearchPaper
+        url: blogs/researchpaper
       - name: Bloomberg Project
-        url: blogs/Bloomberg
+        url: blogs/bloomberg
     menu: Menu
     subtitle: Portfolio Website
     title: Junna Yanai
@@ -88,7 +88,7 @@ params:
       - image: pic07.jpg
         subtitle: Masters in Analytics and Management Student at London Business School with international experience from the United States, France, and Japan, passionate about digitization and analytics. 
         title: About Me
-        url: blogs/AboutMe
+        url: blogs/aboutme
       - image: pic08.jpg
         subtitle: Please take a look at my CV.
         title: My CV
@@ -96,7 +96,7 @@ params:
       - image: pic10.jpg
         subtitle: In this Project, my team and I visualized the trends from various datasets from alcohol consumption patterns around the world to financial stock return analysis.
         title: Ggplot Project 1
-        url: blogs/Project1
+        url: blogs/project1
       - image: pic09.jpg
         subtitle: In this project, my team and I utilized tidyverse and ggplot packages to visualize data on topics ranging from temperatures and climate change to social media usage via the GSS.
         title: Ggplot Project 2
@@ -104,11 +104,11 @@ params:
       - image: picAbstract.jpg
         subtitle: During my undergraduate, I published a thesis on The Effect of CEO Profile and Company Statistics on Envrionmental and Social Disclosures in the Japanese Industrials Sector.
         title: Past Research Paper
-        url: blogs/ResearchPaper
+        url: blogs/researchpaper
       - image: ARIMA.jpg
         subtitle: During my 3rd year in undergraduate studies, I participated in the Bloomberg ESG Investment Contest 2020.
         title: Bloomberg Project
-        url: blogs/Bloomberg
+        url: blogs/bloomberg
   #two:
     #buttonText: My Linkedin
     #enable: yes
