@@ -38,7 +38,7 @@ Please take a look at my CV:
 
 # Below are some of the basics analysis that I have done in my Master's program:
 
-#Gapminder Analysis
+# Gapminder Analysis
 
 ```{r}
 glimpse(gapminder)
