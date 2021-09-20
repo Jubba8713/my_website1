@@ -399,7 +399,7 @@ glimpse(approval_polllist)
 ### Replicating the Biden Approval Margin graph
 
 ```{r}
-plot <- approval_polllist %>%
+approval_polllist %>%
   mutate(week=week(enddate)) %>% #Creating a new column called week by extracting the week from the enddate variable
   group_by(week) %>%
   mutate(
@@ -428,8 +428,6 @@ plot <- approval_polllist %>%
        x='Week of the year', #X-label
        y='Average Approval Margin (Approve - Disapprove)') + #Y-label
   NULL
-
-plot
 ```
 
 ## Compare Confidence Intervals
@@ -636,7 +634,7 @@ bike_exp <- bike %>%
   summarise(expected_rentals=mean(bikes_hired)) # Calculate the expected rentals
 
 # Replicate the first graph of actual and expected rentals for each month across years
-plot2 <- bike %>%
+bike %>%
   filter(year > 2015) %>%
   group_by(year, month) %>%
   summarise(actual_rentals=mean(bikes_hired)) %>% # Calculate the actual mean rentals for each month
@@ -653,8 +651,6 @@ plot2 <- bike %>%
   theme_bw() + # Theme
   labs(title="Monthly changes in TfL bike rentals", subtitle="Change from monthly average shown in blue and calculated between 2016-2019", x="", y="Bike rentals") +
   NULL
-
-plot2
 ```
 
 ### Second graph
@@ -668,7 +664,7 @@ bike_exp_week <- bike %>%
   summarise(expected_rentals=mean(bikes_hired))
 
 # Make the graph
-plot3 <- bike %>%
+bike %>%
   filter(year > 2015) %>%
   mutate(week=if_else(month == 'Jan' & week == 53, 1, week)) %>%
   group_by(year, week) %>%
@@ -692,7 +688,6 @@ plot3 <- bike %>%
   labs(title="Weekly changes in TfL bike rentals", subtitle="% change from weekly averages calculated between 2016-2019", x="week", y="") +
   NULL
 
-plot3
 ```
 
 Should you use the mean or the median to calculate your expected rentals? Why?
