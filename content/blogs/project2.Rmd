@@ -416,11 +416,7 @@ plot <- approval_polllist %>%
   ) %>%
   
   #Scatterplot of the calculated net approval rate means by week 
-<<<<<<< HEAD
  ggplot(aes(x=week, y=mean)) + 
-=======
-plot1 <- ggplot(aes(x=week, y=mean)) + 
->>>>>>> d26813dacb77701bc4386d1c6b07265f230192fc
   geom_point(colour='red') + #Scatterplot using red points
   geom_line(colour='red', size=0.25) + #Adding a red line to connect the points
   geom_ribbon(aes(ymin=lower, ymax=upper), colour='red', linetype=1, alpha=0.1, size=0.25) +
@@ -433,11 +429,7 @@ plot1 <- ggplot(aes(x=week, y=mean)) +
        y='Average Approval Margin (Approve - Disapprove)') + #Y-label
   NULL
 
-<<<<<<< HEAD
 plot
-=======
-plot1
->>>>>>> d26813dacb77701bc4386d1c6b07265f230192fc
 ```
 
 ## Compare Confidence Intervals
@@ -715,5 +707,3 @@ As usual, there is a lot of explanatory text, comments, etc. You do not need the
 - Who did you collaborate with: Lazar Jelic, Valeria Morales, Hanlu Lin, Hao Ni, Purva Sikri, Junna Yanai
 - Approximately how much time did you spend on this problem set: 10hrs
 - What, if anything, gave you the most trouble: The details in replicating graphs
-
-**Please seek out help when you need it,** and remember the [15-minute rule](https://mam202.netlify.app/syllabus/#the-15-minute-rule){target=_blank}. You know enough R (and have enough examples of code from class and your readings) to be able to do this. If you get stuck, ask for help from others, post a question on Slack-- and remember that I am here to help too!  
