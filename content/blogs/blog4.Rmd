@@ -7,7 +7,7 @@ description: ""
 draft: false
 image: picJunna.jpg
 keywords: ""
-slug: AboutMe
+slug: aboutme
 title: About Me
 ---
 
